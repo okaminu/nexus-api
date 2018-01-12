@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lt.tlistas.tlist</groupId>
+    <artifactId>backend-api</artifactId>
+    <version>1.0</version>
+    <organization>
+        <name>Tlistas</name>
+    </organization>
+
+    <distributionManagement>
+        <repository>
+            <id>tlist-release-repo</id>
+            <name>Tlist Release Repository</name>
+            <url>s3://repository.tlist.no/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>tlist-snapshot-repo</id>
+            <name>Tlist Snapshot Repository</name>
+            <url>s3://repository.tlist.no/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+</project>
