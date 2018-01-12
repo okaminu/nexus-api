@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>lt.tlistas.tlist</groupId>
-    <artifactId>backend-api</artifactId>
-    <version>1.0</version>
+    <groupId>lt.tlistas</groupId>
+    <artifactId>core-api</artifactId>
+    <version>1.1.1</version>
     <organization>
         <name>Tlistas</name>
     </organization>
@@ -26,6 +26,7 @@
     </distributionManagement>
 
     <build>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
         <extensions>
             <extension>
                 <groupId>org.springframework.build</groupId>
@@ -33,11 +34,52 @@
                 <version>5.0.0.RELEASE</version>
             </extension>
         </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <kotlin.version>1.2.10</kotlin.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
