@@ -1,0 +1,17 @@
+# IntelliJ project files
+*.idea
+*.iml
+out
+gen
+
+# OS specific
+*.DS_Store
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+/target/
+.idea/
+log/
