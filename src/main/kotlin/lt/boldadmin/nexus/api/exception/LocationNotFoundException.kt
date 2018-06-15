@@ -1,3 +1,3 @@
-package lt.tlistas.core.api.exception
+package lt.boldadmin.nexus.api.exception
 
 class LocationNotFoundException(message: String) : RuntimeException(message)
