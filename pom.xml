@@ -4,24 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>lt.tlistas.core</groupId>
-    <artifactId>core-api</artifactId>
+    <groupId>lt.boldadmin.nexus</groupId>
+    <artifactId>nexus-api</artifactId>
     <version>1.1.1</version>
     <organization>
-        <name>Tlistas</name>
+        <name>boldadmin</name>
     </organization>
 
     <distributionManagement>
         <repository>
-            <id>tlist-release-repo</id>
-            <name>Tlist Release Repository</name>
-            <url>s3://repository.tlist.no/releases</url>
+            <id>boldadmin-release-repo</id>
+            <name>BoldAdmin Release Repository</name>
+            <url>s3://repository.boldadmin.com/releases</url>
         </repository>
 
         <snapshotRepository>
-            <id>tlist-snapshot-repo</id>
-            <name>Tlist Snapshot Repository</name>
-            <url>s3://repository.tlist.no/snapshots</url>
+            <id>boldadmin-snapshot-repo</id>
+            <name>BoldAdmin Snapshot Repository</name>
+            <url>s3://repository.boldadmin.com/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
