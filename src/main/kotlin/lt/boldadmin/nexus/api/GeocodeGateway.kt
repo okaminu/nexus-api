@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api
 
-import lt.boldadmin.nexus.api.type.Location
+import lt.boldadmin.nexus.api.type.valueobject.Location
 
 interface GeocodeGateway {
 
