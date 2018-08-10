@@ -6,7 +6,7 @@
 
     <groupId>lt.boldadmin.nexus</groupId>
     <artifactId>nexus-api</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <organization>
         <name>boldadmin</name>
     </organization>
