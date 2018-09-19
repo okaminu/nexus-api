@@ -6,4 +6,4 @@ phases:
       - echo '<settings><servers><server><id>boldadmin-release-repo</id><username>${env.ACCESS_KEY_ID}</username><password>${env .SECRET_ACCESS_KEY}</password></server><server><id>boldadmin-snapshot-repo</id><username>${env .ACCESS_KEY_ID}</username><password>${env.SECRET_ACCESS_KEY}</password></server></servers></settings>' > ~/.m2/settings.xml
   build:
     commands:
-      - mvn clean deploy
+      - ./gradlew clean publish

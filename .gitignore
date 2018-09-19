@@ -12,6 +12,8 @@ pids
 *.pid
 *.seed
 
-/target/
-.idea/
-log/
+# Gradle
+.gradle
+build/
+local.properties
+gradle.properties
