@@ -6,7 +6,7 @@ import java.util.*
 interface UserRepositoryGateway  {
     fun findByEmail(email: String): User?
 
-    fun findById(id: String): Optional<User>
+    fun findById(id: String): User
 
     fun save(user: User)
 

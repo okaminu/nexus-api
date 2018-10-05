@@ -13,7 +13,7 @@ interface CollaboratorRepositoryGateway {
 
     fun existsByMobileNumber(mobileNumber: String): Boolean
 
-    fun findById(id: String): Optional<Collaborator>
+    fun findById(id: String): Collaborator
 
     fun existsById(id: String): Boolean
 

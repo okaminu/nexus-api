@@ -25,5 +25,5 @@ interface WorkLogRepositoryGateway  {
 
     fun save(workLog: WorkLog)
 
-    fun findById(id: String): Optional<WorkLog>
+    fun findById(id: String): WorkLog
 }

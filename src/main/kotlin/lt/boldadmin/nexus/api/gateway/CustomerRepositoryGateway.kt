@@ -1,7 +1,6 @@
 package lt.boldadmin.nexus.api.gateway
 
 import lt.boldadmin.nexus.api.type.entity.Customer
-import java.util.*
 
 interface CustomerRepositoryGateway  {
 
@@ -9,6 +8,6 @@ interface CustomerRepositoryGateway  {
 
     fun save(customer: Customer)
 
-    fun findById(id: String): Optional<Customer>
+    fun findById(id: String): Customer
 
 }

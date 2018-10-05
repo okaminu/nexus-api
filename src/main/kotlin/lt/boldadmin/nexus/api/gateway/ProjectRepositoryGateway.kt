@@ -8,5 +8,5 @@ interface ProjectRepositoryGateway {
 
     fun save(project: Project)
 
-    fun findById(id: String): Optional<Project>
+    fun findById(id: String): Project
 }
