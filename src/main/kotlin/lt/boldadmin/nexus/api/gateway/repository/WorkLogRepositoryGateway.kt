@@ -1,11 +1,10 @@
-package lt.boldadmin.nexus.api.gateway
+package lt.boldadmin.nexus.api.gateway.repository
 
 import lt.boldadmin.nexus.api.type.entity.WorkLog
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
-import java.util.*
 
 interface WorkLogRepositoryGateway  {
-    fun findFirstByCollaboratorIdAndWorkStatusNotOrderByTimestampDesc(collaboratorId: String, workStatus: WorkStatus)
+    fun findLatestIntervalEnpointByCollaboratorId(collaboratorId: String, workStatus: WorkStatus)
         : WorkLog?
 
     fun findByCollaboratorId(collaboratorId: String): Collection<WorkLog>
@@ -16,10 +15,10 @@ interface WorkLogRepositoryGateway  {
 
     fun findByIntervalId(intervalId: String): Collection<WorkLog>
 
-    fun findByIntervalIdAndWorkStatusNotOrderByTimestampAsc(intervalId: String, workStatus: WorkStatus)
+    fun findIntervalEndpointsAsc(intervalId: String, workStatus: WorkStatus)
         : Collection<WorkLog>
 
-    fun findFirstByIntervalIdAndWorkStatusOrderByTimestampDesc(intervalId: String, workStatus: WorkStatus): WorkLog?
+    fun findLatestIntervalEnpointByIntervalId(intervalId: String, workStatus: WorkStatus): WorkLog?
 
     fun findFirstByIntervalId(intervalId: String): WorkLog
 

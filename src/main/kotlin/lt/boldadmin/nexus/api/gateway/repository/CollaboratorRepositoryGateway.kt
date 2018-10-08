@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.gateway
+package lt.boldadmin.nexus.api.gateway.repository
 
 import lt.boldadmin.nexus.api.type.entity.Collaborator
 import java.util.*

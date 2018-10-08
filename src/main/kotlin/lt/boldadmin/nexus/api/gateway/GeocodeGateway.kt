@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api
+package lt.boldadmin.nexus.api.gateway
 
 import lt.boldadmin.nexus.api.type.valueobject.Location
 
