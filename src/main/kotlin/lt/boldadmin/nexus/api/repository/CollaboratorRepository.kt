@@ -1,9 +1,9 @@
-package lt.boldadmin.nexus.api.gateway.repository
+package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Collaborator
 import java.util.*
 
-interface CollaboratorRepositoryGateway {
+interface CollaboratorRepository {
 
     fun save(collaborator: Collaborator)
 

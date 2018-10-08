@@ -1,9 +1,9 @@
-package lt.boldadmin.nexus.api.gateway.repository
+package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Project
 import java.util.*
 
-interface ProjectRepositoryGateway {
+interface ProjectRepository {
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Project>
 
     fun save(project: Project)

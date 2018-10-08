@@ -1,9 +1,9 @@
-package lt.boldadmin.nexus.api.gateway.repository
+package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.WorkLog
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
-interface WorkLogRepositoryGateway  {
+interface WorkLogRepository  {
     fun findLatestIntervalEnpointByCollaboratorId(collaboratorId: String, workStatus: WorkStatus)
         : WorkLog?
 

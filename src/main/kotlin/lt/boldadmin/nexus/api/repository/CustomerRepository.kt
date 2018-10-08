@@ -1,8 +1,8 @@
-package lt.boldadmin.nexus.api.gateway.repository
+package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Customer
 
-interface CustomerRepositoryGateway  {
+interface CustomerRepository  {
 
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Customer>
 
