@@ -5,12 +5,13 @@ import java.util.*
 
 interface UserRepository  {
 
-    fun findByEmail(email: String): User?
+    fun save(user: User)
+
+
+    fun findAll(): Collection<User>
 
     fun findById(id: String): User
 
-    fun save(user: User)
-
-    fun findAll(): Collection<User>
+    fun findByEmail(email: String): User?
 
 }

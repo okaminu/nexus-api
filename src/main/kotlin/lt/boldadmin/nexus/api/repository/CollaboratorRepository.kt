@@ -7,16 +7,18 @@ interface CollaboratorRepository {
 
     fun save(collaborator: Collaborator)
 
-    fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Collaborator>
 
-    fun findByMobileNumber(mobileNumber: String): Collaborator
-
-    fun existsByMobileNumber(mobileNumber: String): Boolean
+    fun findAll(): Collection<Collaborator>
 
     fun findById(id: String): Collaborator
 
+    fun findByMobileNumber(mobileNumber: String): Collaborator
+
+    fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Collaborator>
+
+
     fun existsById(id: String): Boolean
 
-    fun findAll(): Collection<Collaborator>
+    fun existsByMobileNumber(mobileNumber: String): Boolean
 
 }
