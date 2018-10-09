@@ -4,9 +4,11 @@ import lt.boldadmin.nexus.api.type.entity.Project
 import java.util.*
 
 interface ProjectRepository {
+
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Project>
 
     fun save(project: Project)
 
     fun findById(id: String): Project
+
 }

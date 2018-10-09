@@ -4,8 +4,8 @@ import lt.boldadmin.nexus.api.type.entity.WorkLog
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
 interface WorkLogRepository  {
-    fun findLatestIntervalEnpointByCollaboratorId(collaboratorId: String, workStatus: WorkStatus)
-        : WorkLog?
+
+    fun findLatestIntervalEnpointByCollaboratorId(collaboratorId: String, workStatus: WorkStatus): WorkLog?
 
     fun findByCollaboratorId(collaboratorId: String): Collection<WorkLog>
 
@@ -25,4 +25,5 @@ interface WorkLogRepository  {
     fun save(workLog: WorkLog)
 
     fun findById(id: String): WorkLog
+
 }

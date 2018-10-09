@@ -4,6 +4,7 @@ import lt.boldadmin.nexus.api.type.entity.User
 import java.util.*
 
 interface UserRepository  {
+
     fun findByEmail(email: String): User?
 
     fun findById(id: String): User
@@ -11,4 +12,5 @@ interface UserRepository  {
     fun save(user: User)
 
     fun findAll(): Collection<User>
+
 }
