@@ -1,0 +1,10 @@
+apply from: 'aws-credentials.gradle'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "javax.validation:validation-api:1.1.0.Final"
+}
