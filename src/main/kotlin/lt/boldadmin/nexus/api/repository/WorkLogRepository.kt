@@ -18,10 +18,10 @@ interface WorkLogRepository  {
 
     fun findFirstByIntervalId(intervalId: String): WorkLog
 
-    fun findByIntervalIdAndWorkStatusNotOrderByTimestampAsc(intervalId: String, workStatus: WorkStatus)
+    fun findByIntervalIdAndWorkStatusNotOrderByLatest(intervalId: String, workStatus: WorkStatus)
         : Collection<WorkLog>
 
-    fun findLatestByCollaboratorIdAndNotWorkStatus(collaboratorId: String, workStatus: WorkStatus): WorkLog?
+    fun findLatestByCollaboratorIdAndWorkStatusNot(collaboratorId: String, workStatus: WorkStatus): WorkLog?
 
     fun findLatestByIntervalIdAndWorkStatus(intervalId: String, workStatus: WorkStatus): WorkLog?
 
