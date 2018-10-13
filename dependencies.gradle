@@ -3,19 +3,8 @@ apply from: 'aws-credentials.gradle'
 repositories {
     mavenLocal()
     mavenCentral()
-    repositories {
-        maven {
-            url 's3://repository.boldadmin.com/releases'
-            credentials(AwsCredentials) {
-                accessKey awsCredentials.AWSAccessKeyId
-                secretKey awsCredentials.AWSSecretKey
-            }
-        }
-    }
 }
 
 dependencies {
-    implementation "lt.boldadmin.nexus:nexus:1.3.0"
-
     implementation "javax.validation:validation-api:1.1.0.Final"
 }
