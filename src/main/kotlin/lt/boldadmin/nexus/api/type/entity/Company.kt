@@ -7,7 +7,7 @@ class Company(
 
     var id: String? = null,
 
-    @field:Size(min = 1, message = "Company name required")
+    @field:Size(min = 1, message = "Company Name required")
     var name: String = "",
 
     var customers: MutableCollection<Customer> = HashSet(),

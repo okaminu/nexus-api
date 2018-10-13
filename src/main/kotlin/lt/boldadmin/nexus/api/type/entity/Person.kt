@@ -17,7 +17,7 @@ open class Person(
 
     @field:Pattern(
         regexp = "^(?:[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*)?$",
-        message = "Invalid email address"
+        message = "Invalid Email Address"
     )
     var email: String = ""
 

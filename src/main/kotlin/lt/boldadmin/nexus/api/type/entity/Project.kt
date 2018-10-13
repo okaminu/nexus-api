@@ -9,13 +9,13 @@ class Project(
 
     var id: String? = null,
 
-    @field:Size(min = 1, message = "Project name required")
+    @field:Size(min = 1, message = "Project Name required")
     var name: String = "",
 
-    @field:NotNull(message = "Project address required")
+    @field:NotNull(message = "Project Address required")
     var address: Address = Address(),
 
-    @field:Min(value = 0, message = "Project order number must be greater than 0")
+    @Min(0)
     var orderNumber: Short = 0
 
 ) {
