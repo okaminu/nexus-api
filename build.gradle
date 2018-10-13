@@ -8,6 +8,7 @@ plugins {
 
 apply plugin: 'kotlin'
 apply from: 'publish.gradle'
+apply from: 'dependencies.gradle'
 
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
