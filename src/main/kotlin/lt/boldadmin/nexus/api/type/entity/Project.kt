@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.valueobject.Address
-import lt.boldadmin.nexus.validator.UniqueProjectName
+import lt.boldadmin.nexus.api.type.validator.UniqueProjectName
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
