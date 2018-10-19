@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.type.valueobject
 
-import javax.validation.constraints.NotNull
+import javax.validation.Valid
 
 data class Address(
     var street: String = "",
@@ -9,6 +9,6 @@ data class Address(
 
     var city: String = "",
 
-    @field:NotNull(message = "Country required")
+    @field:Valid
     var country: Country = Country()
 )
