@@ -2,7 +2,7 @@ package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
-class WorkLog(
+class Worklog(
 
     val project: Project,
 
