@@ -12,7 +12,7 @@ interface CollaboratorRepository {
 
     fun findById(id: String): Collaborator
 
-    fun findByMobileNumber(mobileNumber: String): Collaborator
+    fun findFirstByMobileNumber(mobileNumber: String): Collaborator
 
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Collaborator>
 
