@@ -4,7 +4,7 @@ import lt.boldadmin.nexus.api.exception.InvalidValueException
 import lt.boldadmin.nexus.api.type.entity.Customer
 
 interface CustomerService {
-    fun saveRecursively(customer: Customer)
+    fun save(customer: Customer)
     fun createWithDefaults(): Customer
     fun getById(id: String): Customer
 

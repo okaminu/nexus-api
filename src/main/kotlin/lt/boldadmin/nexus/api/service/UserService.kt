@@ -3,7 +3,7 @@ package lt.boldadmin.nexus.api.service
 import lt.boldadmin.nexus.api.type.entity.User
 
 interface UserService {
-    fun saveRecursively(user: User)
+    fun save(user: User)
     fun createWithDefaults(): User
     fun getById(id: String): User
     fun getByEmail(email: String): User?
