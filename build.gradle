@@ -9,6 +9,7 @@ plugins {
 apply plugin: 'kotlin'
 apply from: 'publish.gradle'
 apply from: 'dependencies.gradle'
+apply from: 'jacoco.gradle'
 
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {

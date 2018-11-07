@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.type.validator
+package lt.boldadmin.nexus.api.type.annotation
 
 import javax.validation.Constraint
 import javax.validation.Payload

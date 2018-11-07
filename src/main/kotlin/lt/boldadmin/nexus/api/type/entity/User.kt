@@ -13,8 +13,4 @@ class User(
 
     var role: String = ""
 
-) : Person() {
-
-    fun getCustomers(): Collection<Customer> = company.customers
-
-}
+) : Person()
