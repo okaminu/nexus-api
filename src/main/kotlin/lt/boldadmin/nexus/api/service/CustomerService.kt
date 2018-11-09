@@ -5,7 +5,7 @@ import lt.boldadmin.nexus.api.type.entity.Customer
 
 interface CustomerService {
     fun save(customer: Customer)
-    fun createWithDefaults(): Customer
+    fun createWithDefaults(userId: String): Customer
     fun getById(id: String): Customer
 
     @Throws(InvalidValueException::class)

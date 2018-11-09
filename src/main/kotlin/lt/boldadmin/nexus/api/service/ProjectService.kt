@@ -4,7 +4,7 @@ import lt.boldadmin.nexus.api.exception.InvalidValueException
 import lt.boldadmin.nexus.api.type.entity.Project
 
 interface ProjectService {
-    fun createWithDefaults(): Project
+    fun createWithDefaults(userId: String): Project
     fun getById(projectId: String): Project
     fun update(id: String, attributeName: String, attributeValue: String)
 
