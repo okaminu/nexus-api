@@ -1,9 +1,10 @@
 package lt.boldadmin.nexus.api.repository
 
+import lt.boldadmin.nexus.api.type.entity.Collaborator
 import lt.boldadmin.nexus.api.type.entity.Worklog
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
-interface WorklogRepository  {
+interface WorklogRepository {
 
     fun save(worklog: Worklog)
 
@@ -24,6 +25,8 @@ interface WorklogRepository  {
     fun findLatestByCollaboratorIdAndWorkStatusNot(collaboratorId: String, workStatus: WorkStatus): Worklog?
 
     fun findLatestByIntervalIdAndWorkStatus(intervalId: String, workStatus: WorkStatus): Worklog?
+
+    fun findWorkingCollaboratorsByProjectId(projectId: String): Collection<Collaborator>
 
 
     fun existsByIntervalId(intervalId: String): Boolean
