@@ -6,6 +6,8 @@ interface CollaboratorInspectionLinkRepository {
 
    fun existsByLink(link: String): Boolean
 
+    fun existsById(id: String): Boolean
+
     fun save(inspectionLink: CollaboratorInspectionLink)
 
     fun findById(id: String): CollaboratorInspectionLink
