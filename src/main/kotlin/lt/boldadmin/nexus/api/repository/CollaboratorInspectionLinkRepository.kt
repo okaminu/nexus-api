@@ -12,6 +12,8 @@ interface CollaboratorInspectionLinkRepository {
 
     fun findById(id: String): CollaboratorInspectionLink
 
+    fun findByLink(link: String): CollaboratorInspectionLink
+
     fun deleteById(id: String)
 
 }
