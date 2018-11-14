@@ -1,6 +1,5 @@
 package lt.boldadmin.nexus.api.repository
 
-import lt.boldadmin.nexus.api.type.entity.Collaborator
 import lt.boldadmin.nexus.api.type.entity.Worklog
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 

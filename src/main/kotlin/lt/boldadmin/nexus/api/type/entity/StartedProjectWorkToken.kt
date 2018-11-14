@@ -1,9 +1,9 @@
 package lt.boldadmin.nexus.api.type.entity
 
-class CollaboratorInspectionLink(
+class StartedProjectWorkToken(
 
     val id: String,
 
-    val link: String
+    val token: String
 
 )
