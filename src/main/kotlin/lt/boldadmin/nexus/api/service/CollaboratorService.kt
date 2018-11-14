@@ -3,7 +3,6 @@ package lt.boldadmin.nexus.api.service
 import lt.boldadmin.nexus.api.type.entity.Collaborator
 
 interface CollaboratorService {
-    fun save(collaborator: Collaborator)
     fun getById(id: String): Collaborator
     fun getByMobileNumber(number: String): Collaborator
     fun createWithDefaults(): Collaborator
