@@ -26,9 +26,8 @@ interface WorklogRepository {
 
     fun findLatestByIntervalIdAndWorkStatus(intervalId: String, workStatus: WorkStatus): Worklog?
 
-    fun findWorkingCollaboratorsByProjectId(projectId: String): Collection<Collaborator>
-
-
     fun existsByIntervalId(intervalId: String): Boolean
+
+    fun existsByProjectIdAndCollaboratorId(projectId: String, collaboratorId: String): Boolean
 
 }
