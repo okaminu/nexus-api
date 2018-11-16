@@ -19,7 +19,7 @@ class Project(
     @field:NotNull(message = "Project address required")
     var address: Address = Address(),
 
-    @field:Min(value = 0, message = "Project order number must be greater than 0")
+    @field:Min(value = 0, message = "Project order number must be a positive number")
     var orderNumber: Short = 0
 
 ) {

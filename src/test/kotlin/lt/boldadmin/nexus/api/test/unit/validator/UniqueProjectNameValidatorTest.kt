@@ -18,22 +18,22 @@ import org.mockito.junit.MockitoJUnitRunner
 class UniqueProjectNameValidatorTest {
 
     @Mock
-    private lateinit var userServiceSpy: UserService
+    private lateinit var userServiceStub: UserService
 
     private lateinit var validator: UniqueProjectNameValidator
 
     @Before
     fun `Set up`() {
         validator = UniqueProjectNameValidator().apply {
-            userService = userServiceSpy
+            userService = userServiceStub
         }
 
-        doReturn(createUser()).`when`(userServiceSpy).getByProjectId(PROJECT_ID)
+        doReturn(createUser()).`when`(userServiceStub).getByProjectId(PROJECT_ID)
     }
 
     @Test
     fun `Validation fails when duplicate Project name is found`() {
-        doReturn(true).`when`(userServiceSpy).isProjectNameTaken(PROJECT_NAME, PROJECT_ID, USER_ID)
+        doReturn(true).`when`(userServiceStub).isProjectNameTaken(PROJECT_NAME, PROJECT_ID, USER_ID)
 
         assertFalse(
             validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
@@ -42,7 +42,7 @@ class UniqueProjectNameValidatorTest {
 
     @Test
     fun `Validation passes when no duplicate Project name is found`() {
-        doReturn(false).`when`(userServiceSpy).isProjectNameTaken(PROJECT_NAME, PROJECT_ID, USER_ID)
+        doReturn(false).`when`(userServiceStub).isProjectNameTaken(PROJECT_NAME, PROJECT_ID, USER_ID)
 
         assertTrue(
             validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
