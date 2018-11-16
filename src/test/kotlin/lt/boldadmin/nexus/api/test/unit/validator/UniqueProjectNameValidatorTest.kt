@@ -28,6 +28,7 @@ class UniqueProjectNameValidatorTest {
             userService = userServiceStub
         }
 
+        validator.initialize(mock())
         doReturn(createUser()).`when`(userServiceStub).getByProjectId(PROJECT_ID)
     }
 
