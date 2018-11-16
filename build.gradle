@@ -10,6 +10,8 @@ apply plugin: 'kotlin'
 apply from: 'publish.gradle'
 apply from: 'dependencies.gradle'
 
+group = gradle.ext.group
+version = gradle.ext.version
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
     kotlinOptions {
