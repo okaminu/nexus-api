@@ -10,6 +10,6 @@ interface UserService {
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
     fun doesUserHaveCollaborator(userId: String, collaboratorId: String): Boolean
-    fun isProjectNameTaken(projectName: String, projectId: String, userId: String): Boolean
+    fun isProjectNameUnique(projectName: String, projectId: String, userId: String): Boolean
     fun getByProjectId(projectId: String): User
 }
