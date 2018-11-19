@@ -34,7 +34,7 @@ class UniqueProjectNameValidatorTest {
 
     @Test
     fun `Validation fails when duplicate Project name is found`() {
-        doReturn(false).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, USER_ID)
+        doReturn(false).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, PROJECT_ID, USER_ID)
 
         assertFalse(
             validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
@@ -43,7 +43,7 @@ class UniqueProjectNameValidatorTest {
 
     @Test
     fun `Validation passes when no duplicate Project name is found`() {
-        doReturn(true).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, USER_ID)
+        doReturn(true).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, PROJECT_ID, USER_ID)
 
         assertTrue(
             validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
