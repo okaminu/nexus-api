@@ -13,6 +13,6 @@ class UniqueProjectNameValidator: ConstraintValidator<UniqueProjectName, Project
     override fun initialize(constraintAnnotation: UniqueProjectName) {}
 
     override fun isValid(project: Project, context: ConstraintValidatorContext) =
-        userService.isProjectNameUnique(project.name, project.id!!, userService.getByProjectId(project.id!!).id!!)
+        userService.isProjectNameUnique(project.name, userService.getByProjectId(project.id!!).id!!)
 
 }
