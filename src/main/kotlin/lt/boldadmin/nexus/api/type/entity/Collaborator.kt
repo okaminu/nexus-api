@@ -5,7 +5,7 @@ import javax.validation.constraints.Min
 
 class Collaborator(
 
-    var hmsCardNumber: String = "",
+    var hseCardNumber: String = "",
 
     var mobileNumber: String = "",
 
