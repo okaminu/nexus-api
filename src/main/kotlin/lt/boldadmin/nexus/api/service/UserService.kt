@@ -7,9 +7,9 @@ interface UserService {
     fun createWithDefaults(): User
     fun getById(id: String): User
     fun getByEmail(email: String): User?
+    fun getByProjectId(projectId: String): User
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
     fun doesUserHaveCollaborator(userId: String, collaboratorId: String): Boolean
     fun isProjectNameUnique(projectName: String, projectId: String, userId: String): Boolean
-    fun getByProjectId(projectId: String): User
 }
