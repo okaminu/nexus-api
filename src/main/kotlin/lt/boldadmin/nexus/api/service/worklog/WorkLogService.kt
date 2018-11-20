@@ -6,4 +6,5 @@ interface WorkLogService {
     fun getByCollaboratorId(id: String): Collection<Worklog>
     fun getByProjectId(id: String): Collection<Worklog>
     fun getIntervalEndpoints(intervalId: String): Collection<Worklog>
+    fun existsByProjectIdAndCollaboratorId(projectId: String, collaboratorId: String): Boolean
 }
