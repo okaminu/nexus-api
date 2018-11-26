@@ -4,7 +4,7 @@ import lt.boldadmin.nexus.api.type.entity.Collaborator
 import lt.boldadmin.nexus.api.type.entity.Project
 
 interface WorklogStartEndService {
-    fun getProjectNameOfStartedWork(collaboratorId: String): String
+    fun getProjectOfStartedWork(collaboratorId: String): Project
     fun start(collaborator: Collaborator, project: Project)
     fun start(collaborator: Collaborator, project: Project, timestamp: Long)
     fun hasWorkStarted(collaboratorId: String): Boolean
