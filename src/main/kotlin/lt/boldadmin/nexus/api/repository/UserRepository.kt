@@ -20,7 +20,7 @@ interface UserRepository  {
 
     fun findByProjectId(projectId: String): User
 
-    fun findProjectByUserId(userId: String): Set<Project>
+    fun findProjectsByUserId(userId: String): Set<Project>
 
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
 
