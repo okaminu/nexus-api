@@ -29,4 +29,10 @@ interface WorklogRepository {
 
     fun existsByProjectIdAndCollaboratorId(projectId: String, collaboratorId: String): Boolean
 
+    fun doesUserHaveWorklogInterval(userId: String, intervalId: String): Boolean
+
+    fun doesCollaboratorHaveWorklogInterval(collaboratorId: String, intervalId: String): Boolean
+
+    fun doesCollaboratorHaveWorklogIntervals(collaboratorId: String, intervalIds: Collection<String>): Boolean
+
 }
