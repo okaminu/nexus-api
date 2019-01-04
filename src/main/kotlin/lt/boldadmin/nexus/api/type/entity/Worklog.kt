@@ -4,15 +4,15 @@ import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
 class Worklog(
 
-    val project: Project,
+    val project: Project = Project(),
 
-    val collaborator: Collaborator,
+    val collaborator: Collaborator = Collaborator(),
 
-    val timestamp: Long,
+    val timestamp: Long = 0,
 
-    val workStatus: WorkStatus,
+    val workStatus: WorkStatus = WorkStatus.START,
 
-    val intervalId: String,
+    val intervalId: String = "",
 
     val description: String = "",
 
