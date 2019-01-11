@@ -6,6 +6,6 @@ interface CompanyRepository {
 
     fun save(company: Company)
 
-    fun findByName(name: String): Company?
+    fun existsByName(name: String): Boolean
 
 }
