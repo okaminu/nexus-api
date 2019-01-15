@@ -5,7 +5,7 @@ import javax.validation.constraints.Size
 
 class Company(
 
-    var id: String? = null,
+    var id: String = "",
 
     @field:Size(min = 1, message = "Company name required")
     var name: String = "",

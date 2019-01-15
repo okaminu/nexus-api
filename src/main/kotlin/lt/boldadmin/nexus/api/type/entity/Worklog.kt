@@ -16,5 +16,5 @@ class Worklog(
 
     val description: String = "",
 
-    var id: String? = null
+    var id: String = ""
 )
