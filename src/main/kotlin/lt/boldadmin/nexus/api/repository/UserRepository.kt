@@ -8,12 +8,11 @@ interface UserRepository  {
 
     fun save(user: User)
 
-
     fun findAll(): Collection<User>
 
     fun findById(id: String): User
 
-    fun findByEmail(email: String): User?
+    fun findByEmail(email: String): User
 
     fun existsByEmail(email: String): Boolean
 
