@@ -3,7 +3,6 @@ package lt.boldadmin.nexus.api.repository
 import lt.boldadmin.nexus.api.type.entity.Project
 import lt.boldadmin.nexus.api.type.entity.User
 import lt.boldadmin.nexus.api.type.entity.Worklog
-import java.util.*
 
 interface UserRepository  {
 
@@ -15,6 +14,8 @@ interface UserRepository  {
     fun findById(id: String): User
 
     fun findByEmail(email: String): User?
+
+    fun existsByEmail(email: String): Boolean
 
     fun findByCollaboratorId(collaboratorId: String): User
 
