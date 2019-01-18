@@ -8,7 +8,7 @@ interface UserRepository  {
 
     fun save(user: User)
 
-    fun findAll(): Collection<User>
+    fun existsAny(): Boolean
 
     fun findById(id: String): User
 
