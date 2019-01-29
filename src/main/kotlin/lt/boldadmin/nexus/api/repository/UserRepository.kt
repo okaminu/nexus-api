@@ -1,14 +1,10 @@
 package lt.boldadmin.nexus.api.repository
 
-import lt.boldadmin.nexus.api.type.entity.Project
-import lt.boldadmin.nexus.api.type.entity.User
-import lt.boldadmin.nexus.api.type.entity.Worklog
-import java.util.*
+import lt.boldadmin.nexus.api.type.entity.*
 
 interface UserRepository  {
 
     fun save(user: User)
-
 
     fun findAll(): Collection<User>
 
@@ -21,6 +17,8 @@ interface UserRepository  {
     fun findByProjectId(projectId: String): User
 
     fun findProjectsByUserId(userId: String): Set<Project>
+
+    fun findCollaboratorsByUserId(userId: String): Set<Collaborator>
 
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
 

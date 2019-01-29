@@ -7,7 +7,6 @@ interface ProjectRepository {
 
     fun save(project: Project)
 
-
     fun findById(id: String): Project
 
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Project>
