@@ -1,7 +1,6 @@
 package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Project
-import java.util.*
 
 interface ProjectRepository {
 
