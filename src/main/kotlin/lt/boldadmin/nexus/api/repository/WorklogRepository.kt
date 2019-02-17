@@ -23,7 +23,11 @@ interface WorklogRepository {
 
     fun findLatestWithWorkStatusNot(collaboratorId: String, workStatus: WorkStatus): Worklog?
 
-    fun findLatestWithWorkStatusNot(projectId: String, collaboratorId: String, workStatus: WorkStatus): Worklog?
+    fun findLatestWithWorkStatusNot(
+        collaboratorId: String,
+        projectId: String,
+        workStatus: WorkStatus
+    ): Worklog?
 
     fun findLatest(intervalId: String, workStatus: WorkStatus): Worklog?
 

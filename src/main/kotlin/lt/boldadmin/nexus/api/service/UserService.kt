@@ -11,7 +11,7 @@ interface UserService {
     fun existsByEmail(email: String): Boolean
     fun existsAny(): Boolean
     fun getByProjectId(projectId: String): User
-    fun getCollaborators(id: String): Set<Collaborator>
+    fun getCollaborators(userId: String): Set<Collaborator>
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
     fun doesUserHaveCollaborator(userId: String, collaboratorId: String): Boolean

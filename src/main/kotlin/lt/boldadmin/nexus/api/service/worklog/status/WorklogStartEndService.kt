@@ -8,7 +8,7 @@ interface WorklogStartEndService {
     fun start(collaborator: Collaborator, project: Project)
     fun start(collaborator: Collaborator, project: Project, timestamp: Long)
     fun hasWorkStarted(collaboratorId: String): Boolean
-    fun hasWorkStarted(projectId: String, collaboratorId: String): Boolean
+    fun hasWorkStarted(collaboratorId: String, projectId: String): Boolean
     fun end(collaborator: Collaborator)
     fun end(collaborator: Collaborator, timestamp: Long)
     fun endAllStartedWorkWhereWorkTimeEnded()
