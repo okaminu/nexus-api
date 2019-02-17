@@ -7,7 +7,9 @@ interface UserService {
     fun save(user: User)
     fun createWithDefaults(): User
     fun getById(id: String): User
-    fun getByEmail(email: String): User?
+    fun getByEmail(email: String): User
+    fun existsByEmail(email: String): Boolean
+    fun existsAny(): Boolean
     fun getByProjectId(projectId: String): User
     fun getCollaborators(id: String): Set<Collaborator>
     fun doesUserHaveCustomer(userId: String, customerId: String): Boolean

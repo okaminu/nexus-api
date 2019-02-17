@@ -10,7 +10,7 @@ import javax.validation.constraints.Size
 @UniqueProjectName
 class Project(
 
-    var id: String? = null,
+    var id: String = "",
 
     @field:Size(min = 1, message = "Project name required")
     var name: String = "",

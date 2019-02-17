@@ -4,14 +4,14 @@ apply from: 'aws-credentials.gradle'
 publishing {
     publications {
         mavenJava(MavenPublication) { publication ->
-            groupId group
+            groupId gradle.ext.group
             artifactId = rootProject.name
-            version version
+            version gradle.ext.version
             from components.java
 
             repositories {
                 maven {
-                    url 's3://repository.boldadmin.com/releases'
+                    url 's3://repository.boldadmin.com/snapshots'
                     credentials(AwsCredentials) {
                         accessKey = awsCredentials.AWSAccessKeyId
                         secretKey = awsCredentials.AWSSecretKey
