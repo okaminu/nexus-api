@@ -12,7 +12,7 @@ interface WorklogRepository {
 
     fun findByIntervalIdOrderByLatest(intervalId: String): Collection<Worklog>
 
-    fun findLatest(intervalId: String): Worklog?
+    fun findLatest(collaboratorId: String): Worklog?
 
     fun findLatest(collaboratorId: String, projectId: String): Worklog?
 
