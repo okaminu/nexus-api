@@ -6,7 +6,6 @@ interface CustomerRepository  {
 
     fun save(customer: Customer)
 
-
     fun findById(id: String): Customer
 
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Customer>

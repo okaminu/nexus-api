@@ -1,12 +1,10 @@
 package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Collaborator
-import java.util.*
 
 interface CollaboratorRepository {
 
     fun save(collaborator: Collaborator)
-
 
     fun findAll(): Collection<Collaborator>
 
@@ -15,7 +13,6 @@ interface CollaboratorRepository {
     fun findFirstByMobileNumber(mobileNumber: String): Collaborator
 
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Collaborator>
-
 
     fun existsById(id: String): Boolean
 
