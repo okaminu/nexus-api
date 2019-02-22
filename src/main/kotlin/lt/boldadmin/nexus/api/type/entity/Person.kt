@@ -7,7 +7,7 @@ import javax.validation.constraints.Size
 
 open class Person(
 
-    var id: String? = null,
+    var id: String = "",
 
     @field:Size(min = 1, message = "Name required")
     var name: String = "",
