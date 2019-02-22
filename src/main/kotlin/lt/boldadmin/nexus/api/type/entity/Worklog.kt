@@ -14,7 +14,5 @@ class Worklog(
 
     val intervalId: String = "",
 
-    val description: String = "",
-
     var id: String = ""
 )
