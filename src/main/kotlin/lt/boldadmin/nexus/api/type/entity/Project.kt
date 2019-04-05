@@ -4,7 +4,6 @@ import lt.boldadmin.nexus.api.type.annotation.UniqueProjectName
 import lt.boldadmin.nexus.api.type.valueobject.Location
 import javax.validation.Valid
 import javax.validation.constraints.Min
-import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
 @UniqueProjectName
@@ -16,8 +15,7 @@ class Project(
     var name: String = "",
 
     @field:Valid
-    @field:NotNull(message = "Project location required")
-    var location: Location = Location(0.0, 0.0),
+    var location: Location? = Location(0.0, 0.0),
 
     @field:Min(value = 0, message = "Project order number must be a positive number")
     var orderNumber: Short = 0

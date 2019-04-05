@@ -9,4 +9,5 @@ interface ProjectService {
     fun update(id: String, attributeName: String, attributeValue: String)
     fun updateOrderNumber(projectId: String, orderNumber: Short)
     fun updateLocation(projectId: String, location: Location)
+    fun deleteLocation(projectId: String)
 }
