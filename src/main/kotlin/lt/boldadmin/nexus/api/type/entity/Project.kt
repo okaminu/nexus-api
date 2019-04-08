@@ -15,7 +15,7 @@ class Project(
     var name: String = "",
 
     @field:Valid
-    var location: Location? = Location(0.0, 0.0),
+    var location: Location? = null,
 
     @field:Min(value = 0, message = "Project order number must be a positive number")
     var orderNumber: Short = 0
