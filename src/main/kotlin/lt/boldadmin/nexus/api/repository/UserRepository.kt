@@ -22,8 +22,6 @@ interface UserRepository  {
 
     fun findCollaboratorsByUserId(userId: String): Set<Collaborator>
 
-    fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
-
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
 
     fun doesUserHaveCollaborator(userId: String, collaboratorId: String): Boolean
