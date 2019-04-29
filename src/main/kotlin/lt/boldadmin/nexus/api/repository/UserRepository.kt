@@ -14,6 +14,8 @@ interface UserRepository  {
 
     fun existsByEmail(email: String): Boolean
 
+    fun existsByCompanyName(name: String): Boolean
+
     fun findByCollaboratorId(collaboratorId: String): User
 
     fun findByProjectId(projectId: String): User
@@ -21,8 +23,6 @@ interface UserRepository  {
     fun findProjectsByUserId(userId: String): Set<Project>
 
     fun findCollaboratorsByUserId(userId: String): Set<Collaborator>
-
-    fun doesUserHaveCustomer(userId: String, customerId: String): Boolean
 
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
 
