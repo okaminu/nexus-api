@@ -12,6 +12,8 @@ interface WorklogRepository {
 
     fun findIntervalIdsByCollaboratorId (collaboratorId: String): Collection<String>
 
+    fun findIntervalIdsByProjectId (projectId: String): Collection<String>
+
     fun findByIntervalIdOrderByLatest(intervalId: String): Collection<Worklog>
 
     fun findLatest(collaboratorId: String): Worklog?
