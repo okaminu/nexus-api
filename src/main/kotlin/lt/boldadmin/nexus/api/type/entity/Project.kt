@@ -1,10 +1,9 @@
 package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.UniqueProjectName
-import lt.boldadmin.nexus.api.type.valueobject.Address
+import lt.boldadmin.nexus.api.type.valueobject.Location
 import javax.validation.Valid
 import javax.validation.constraints.Min
-import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
 @UniqueProjectName
@@ -16,8 +15,7 @@ class Project(
     var name: String = "",
 
     @field:Valid
-    @field:NotNull(message = "Project address required")
-    var address: Address = Address(),
+    var locations: MutableCollection<Location> = mutableSetOf(),
 
     @field:Min(value = 0, message = "Project order number must be a positive number")
     var orderNumber: Short = 0
