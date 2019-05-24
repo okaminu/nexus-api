@@ -2,7 +2,6 @@ package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.UniqueProjectName
 import lt.boldadmin.nexus.api.type.valueobject.Location
-import java.util.HashSet
 import javax.validation.Valid
 import javax.validation.constraints.Min
 import javax.validation.constraints.Size
