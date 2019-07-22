@@ -2,7 +2,7 @@ package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.*
 
-interface UserRepository  {
+interface UserRepository {
 
     fun save(user: User)
 
