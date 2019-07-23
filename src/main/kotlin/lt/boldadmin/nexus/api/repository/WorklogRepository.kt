@@ -6,10 +6,6 @@ interface WorklogRepository {
 
     fun save(worklog: Worklog)
 
-    fun findByProjectId(projectId: String): Collection<Worklog>
-
-    fun findByCollaboratorId(collaboratorId: String): Collection<Worklog>
-
     fun findIntervalIdsByCollaboratorId(collaboratorId: String): Collection<String>
 
     fun findIntervalIdsByProjectId(projectId: String): Collection<String>

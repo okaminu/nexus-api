@@ -4,7 +4,7 @@ import lt.boldadmin.nexus.api.type.entity.Worklog
 
 interface WorklogService {
     fun save(worklog: Worklog)
-    fun getByCollaboratorId(id: String): Collection<Worklog>
-    fun getByProjectId(id: String): Collection<Worklog>
     fun getIntervalEndpoints(intervalId: String): Collection<Worklog>
+    fun getIntervalIdsByCollaboratorId(id: String): Collection<String>
+    fun getIntervalIdsByProjectId(id: String): Collection<String>
 }
