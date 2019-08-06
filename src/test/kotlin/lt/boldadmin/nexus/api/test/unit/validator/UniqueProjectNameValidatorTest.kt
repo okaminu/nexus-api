@@ -6,15 +6,15 @@ import lt.boldadmin.nexus.api.service.UserService
 import lt.boldadmin.nexus.api.type.entity.Project
 import lt.boldadmin.nexus.api.type.entity.User
 import lt.boldadmin.nexus.api.validator.UniqueProjectNameValidator
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertTrue
-import org.junit.Before
-import org.junit.Test
-import org.junit.runner.RunWith
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mock
-import org.mockito.junit.MockitoJUnitRunner
+import org.mockito.junit.jupiter.MockitoExtension
 
-@RunWith(MockitoJUnitRunner::class)
+@ExtendWith(MockitoExtension::class)
 class UniqueProjectNameValidatorTest {
 
     @Mock
@@ -22,7 +22,7 @@ class UniqueProjectNameValidatorTest {
 
     private lateinit var validator: UniqueProjectNameValidator
 
-    @Before
+    @BeforeEach
     fun `Set up`() {
         validator = UniqueProjectNameValidator().apply {
             userService = userServiceStub
@@ -36,18 +36,14 @@ class UniqueProjectNameValidatorTest {
     fun `Validation fails when duplicate Project name is found`() {
         doReturn(false).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, PROJECT_ID, USER_ID)
 
-        assertFalse(
-            validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
-        )
+        assertFalse(validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock()))
     }
 
     @Test
     fun `Validation passes when no duplicate Project name is found`() {
         doReturn(true).`when`(userServiceStub).isProjectNameUnique(PROJECT_NAME, PROJECT_ID, USER_ID)
 
-        assertTrue(
-            validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock())
-        )
+        assertTrue(validator.isValid(Project(PROJECT_ID, PROJECT_NAME), mock()))
     }
 
     private fun createUser() = User().apply { id = USER_ID }
