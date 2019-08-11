@@ -15,6 +15,5 @@ dependencies {
     testImplementation 'org.mockito:mockito-junit-jupiter:3.0.0'
 
     testImplementation "org.mockito:mockito-core:3.0.0"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
 }
