@@ -2,7 +2,7 @@ package lt.boldadmin.nexus.api.type.valueobject
 
 import java.time.LocalDate
 
-data class DateRange(val start: LocalDate = LocalDate.EPOCH, val end: LocalDate = LocalDate.now()) {
+data class DateRange(val start: LocalDate, val end: LocalDate) {
 
     init {
         if (start > end)
