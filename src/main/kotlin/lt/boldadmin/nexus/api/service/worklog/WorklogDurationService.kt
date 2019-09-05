@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.service.worklog.duration
+package lt.boldadmin.nexus.api.service.worklog
 
 interface WorklogDurationService {
     fun measureDuration(intervalId: String): Long

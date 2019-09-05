@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.service.worklog.status
+package lt.boldadmin.nexus.api.service.worklog
 
 import lt.boldadmin.nexus.api.type.entity.Project
 
