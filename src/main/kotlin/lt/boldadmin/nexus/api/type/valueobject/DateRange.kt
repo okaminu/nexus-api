@@ -5,7 +5,7 @@ import java.time.LocalDate
 data class DateRange(val start: LocalDate = LocalDate.EPOCH, val end: LocalDate = LocalDate.now()) {
 
     init {
-        if (this.start.isAfter(this.end))
+        if (start > end)
             throw IllegalArgumentException("Range start date should follow before end date")
     }
 
