@@ -20,7 +20,6 @@ class User(
 
     var collaborators: MutableCollection<Collaborator> = HashSet()
 
-
 ) : Person() {
     fun addProject(project: Project) {
         projects.add(project)

@@ -2,7 +2,7 @@ apply from: 'aws-credentials.gradle'
 
 repositories {
     mavenLocal()
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -11,8 +11,9 @@ dependencies {
 
     implementation "javax.validation:validation-api:1.1.0.Final"
 
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.mockito:mockito-core:2.23.4"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
-    testImplementation "com.nhaarman:mockito-kotlin:1.6.0"
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.5.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.5.0"
+    testImplementation "io.mockk:mockk:1.9.3"
 }
