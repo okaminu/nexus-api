@@ -4,5 +4,6 @@ import lt.boldadmin.nexus.api.type.valueobject.Coordinates
 
 class CollaboratorCoordinates(
     val collaboratorId: String,
-    val coordinates: Coordinates
+    val coordinates: Coordinates,
+    val timestamp: Long
 )

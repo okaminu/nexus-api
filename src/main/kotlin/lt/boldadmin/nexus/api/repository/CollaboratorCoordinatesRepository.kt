@@ -4,6 +4,5 @@ import lt.boldadmin.nexus.api.type.entity.CollaboratorCoordinates
 
 interface CollaboratorCoordinatesRepository {
     fun save(collaboratorCoordinates: CollaboratorCoordinates)
-    fun removeByCollaboratorId(collaboratorId: String)
-    fun existsByCollaboratorId(collaboratorId: String): Boolean
+    fun removeOlderThan(collaboratorId: String, timestamp: Long)
 }
