@@ -1,6 +1,7 @@
 package lt.boldadmin.nexus.api.repository
 
-import lt.boldadmin.nexus.api.type.entity.Collaborator
+import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
+
 
 interface CollaboratorRepository {
 

@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.type.entity
+package lt.boldadmin.nexus.api.type.entity.collaborator
 
 import lt.boldadmin.nexus.api.type.valueobject.Coordinates
 
