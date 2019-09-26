@@ -2,7 +2,6 @@ package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
 
-
 interface CollaboratorRepository {
 
     fun save(collaborator: Collaborator)
@@ -18,5 +17,4 @@ interface CollaboratorRepository {
     fun existsById(id: String): Boolean
 
     fun existsByMobileNumber(mobileNumber: String): Boolean
-
 }
