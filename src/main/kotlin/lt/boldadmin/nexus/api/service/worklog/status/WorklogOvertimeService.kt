@@ -1,5 +1,5 @@
 package lt.boldadmin.nexus.api.service.worklog.status
 
-interface WorklogsEndService {
+interface WorklogOvertimeService {
     fun endAllStartedWorkWhereWorkTimeEnded()
 }
