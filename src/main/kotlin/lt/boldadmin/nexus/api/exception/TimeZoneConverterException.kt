@@ -1,3 +1,3 @@
 package lt.boldadmin.nexus.api.exception
 
-class TimeZoneConverterException(message: String?) : RuntimeException(message)
+class TimeZoneConverterException(message: String) : RuntimeException(message)
