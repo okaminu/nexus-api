@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api
+package lt.boldadmin.nexus.api.gateway
 
 interface SmsGateway {
     fun send(senderPhoneNumber: String, receiverPhoneNumber: String, message: String)
