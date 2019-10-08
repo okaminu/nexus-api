@@ -1,0 +1,9 @@
+package lt.boldadmin.nexus.api
+
+import lt.boldadmin.nexus.api.type.valueobject.Coordinates
+
+interface Geocoder {
+
+    fun toCoordinates(address: String): Coordinates
+
+}
