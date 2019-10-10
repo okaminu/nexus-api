@@ -15,7 +15,7 @@ class Project(
     var name: String = "",
 
     @field:Valid
-    var locations: MutableCollection<Location> = mutableSetOf(),
+    var location: Location = Location(),
 
     @field:Min(value = 0, message = "Project order number must be a positive number")
     var orderNumber: Short = 0
