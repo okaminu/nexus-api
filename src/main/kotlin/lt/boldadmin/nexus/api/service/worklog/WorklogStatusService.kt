@@ -6,5 +6,4 @@ interface WorklogStatusService {
     fun getProjectOfStartedWork(collaboratorId: String): Project
     fun hasWorkStarted(collaboratorId: String): Boolean
     fun hasWorkStarted(collaboratorId: String, projectId: String): Boolean
-    fun endAllStartedWorkWhereWorkTimeEnded()
 }

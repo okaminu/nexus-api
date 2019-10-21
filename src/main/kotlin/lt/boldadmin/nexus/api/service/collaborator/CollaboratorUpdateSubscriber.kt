@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.service.worklog
+package lt.boldadmin.nexus.api.service.collaborator
 
 import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
 
