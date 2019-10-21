@@ -5,7 +5,7 @@ jacoco {
 
 def fileFilter = ['**/*$*$*.*', 'lt/boldadmin/nexus/api/exception/*', 'lt/boldadmin/nexus/api/repository/*', 
                   'lt/boldadmin/nexus/api/service/*', 'lt/boldadmin/nexus/api/type/*',
-                  'lt/boldadmin/nexus/api/*Gateway.class']
+                  'lt/boldadmin/nexus/api/*Gateway.class', 'lt/boldadmin/nexus/api/*Geocoder.class']
 def debugTree = fileTree(dir: "${buildDir}/classes/kotlin/main", excludes: fileFilter)
 
 jacocoTestReport {
