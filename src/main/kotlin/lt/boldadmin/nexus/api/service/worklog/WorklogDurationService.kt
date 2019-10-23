@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.service.worklog.duration
+package lt.boldadmin.nexus.api.service.worklog
 
 import lt.boldadmin.nexus.api.type.valueobject.DateRange
 
