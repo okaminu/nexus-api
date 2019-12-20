@@ -8,6 +8,8 @@ interface ProjectRepository {
 
     fun findById(id: String): Project
 
+    fun findByCollaboratorId(id: String): Collection<Project>
+
     fun findByOrderNumberIsGreaterThanEqual(orderNumber: Short): Collection<Project>
 
 }
