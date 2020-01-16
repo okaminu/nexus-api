@@ -7,7 +7,7 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class WorkTimeLength(
+annotation class MinimumWorkTimeLength(
 
     val message: String = "Work time cannot be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
