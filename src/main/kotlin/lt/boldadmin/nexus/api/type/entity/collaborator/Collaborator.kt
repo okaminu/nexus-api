@@ -4,6 +4,7 @@ import lt.boldadmin.nexus.api.type.entity.Person
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import java.time.DayOfWeek
 import javax.validation.constraints.Min
+import javax.validation.constraints.Size
 
 class Collaborator(
 
@@ -14,6 +15,7 @@ class Collaborator(
     @field:Min(0)
     var orderNumber: Short = 0,
 
+    @field:Size(min = 7, max = 7)
     var workTime: Array<TimeRange> = emptyArray(),
 
     var enabledWorkDays: Set<DayOfWeek> = emptySet()
