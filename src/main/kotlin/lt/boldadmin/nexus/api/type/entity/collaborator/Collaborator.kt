@@ -14,7 +14,7 @@ class Collaborator(
     @field:Min(0)
     var orderNumber: Short = 0,
 
-    var workTime: TimeRange = TimeRange(0, 0),
+    var workTime: Array<TimeRange> = emptyArray(),
 
     var enabledWorkDays: Set<DayOfWeek> = emptySet()
 
@@ -23,4 +23,5 @@ class Collaborator(
     fun incrementOrderNumber() {
         this.orderNumber++
     }
+
 }
