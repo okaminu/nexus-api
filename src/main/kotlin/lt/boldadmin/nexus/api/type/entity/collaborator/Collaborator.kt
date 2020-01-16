@@ -1,5 +1,6 @@
 package lt.boldadmin.nexus.api.type.entity.collaborator
 
+import lt.boldadmin.nexus.api.type.annotation.WorkTimeLength
 import lt.boldadmin.nexus.api.type.entity.Person
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import java.time.DayOfWeek
@@ -16,6 +17,7 @@ class Collaborator(
     var orderNumber: Short = 0,
 
     @field:Size(min = 7, max = 7)
+    @field:WorkTimeLength
     var workTime: Array<TimeRange> = emptyArray(),
 
     var enabledWorkDays: Set<DayOfWeek> = emptySet()
