@@ -78,4 +78,17 @@ class WorkTimeBetweenDaysValidatorTest {
         assertFalse(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
     }
 
+    @Test
+    fun `Validates every day`() {
+        for (i: Int in 0..5) {
+            val workTimeWithTwoInvalidDays = Array(7) { TimeRange(100, 200) }.apply {
+                this[i] = TimeRange(100, 1438)
+                this[i + 1] = TimeRange(5, 100)
+            }
+            assertFalse(WorkTimeBetweenDaysValidator().isValid(workTimeWithTwoInvalidDays))
+        }
+        val workTimeWithInvalidSundayMonday = arrayOf(TimeRange(5, 200)) + Array(6) { TimeRange(1410, 1438) }
+        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTimeWithInvalidSundayMonday))
+    }
+
 }
