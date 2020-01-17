@@ -1,15 +1,15 @@
 package lt.boldadmin.nexus.api.validator
 
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
+import java.time.DayOfWeek
 
 class WorkTimeBetweenDaysValidator {
 
-    fun isValid(workTime: Array<TimeRange>): Boolean {
-        for (i: Int in 0..workTime.size - 2)
-            if (!(workTime[i] isDistanced workTime[i + 1]))
-                return false
-        return workTime[6] isDistanced workTime[0]
-    }
+    fun isValid(workTime: Array<TimeRange>) =
+        (DayOfWeek.values() + DayOfWeek.MONDAY)
+            .toList()
+            .zipWithNext()
+            .all { (firstDay, secondDay) -> workTime[firstDay.ordinal] isDistanced workTime[secondDay.ordinal] }
 
     private infix fun TimeRange.isDistanced(that: TimeRange): Boolean =
         DAY_IN_MINUTES - this.endOfDayInMinutes + that.startOfDayInMinutes >= MINIMUM_MINUTES_BETWEEN_WORK_DAYS
