@@ -1,11 +1,14 @@
 package lt.boldadmin.nexus.api.validator
 
+import lt.boldadmin.nexus.api.type.annotation.WorkTimeHasGapsBetweenDays
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import java.time.DayOfWeek
+import javax.validation.ConstraintValidator
+import javax.validation.ConstraintValidatorContext
 
-class WorkTimeBetweenDaysValidator {
+class WorkTimeHasGapsBetweenDaysValidator: ConstraintValidator<WorkTimeHasGapsBetweenDays, Array<TimeRange>> {
 
-    fun isValid(workTime: Array<TimeRange>) =
+    override fun isValid(workTime: Array<TimeRange>, context: ConstraintValidatorContext) =
         (DayOfWeek.values() + DayOfWeek.MONDAY)
             .asSequence()
             .zipWithNext()

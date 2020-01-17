@@ -1,18 +1,27 @@
 package lt.boldadmin.nexus.api.test.unit.validator
 
+import io.mockk.mockk
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
-import lt.boldadmin.nexus.api.validator.WorkTimeBetweenDaysValidator
+import lt.boldadmin.nexus.api.validator.WorkTimeHasGapsBetweenDaysValidator
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-class WorkTimeBetweenDaysValidatorTest {
+class WorkTimeHasGapsBetweenDaysValidatorTest {
+
+    lateinit var validator: WorkTimeHasGapsBetweenDaysValidator
+
+    @BeforeEach
+    fun `Set up`() {
+        validator = WorkTimeHasGapsBetweenDaysValidator()
+    }
 
     @Test
     fun `Validation passes when time gap between work days time is longer than 10 minutes`() {
         val workTime = Array(7) { TimeRange(100, 200) }
 
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(workTime))
+        assertTrue(validator.isValid(workTime, mockk()))
     }
 
     @Test
@@ -20,8 +29,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(5, 1435) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(5, 200)) + Array(6) { TimeRange(1400, 1435) }
 
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertTrue(validator.isValid(workTime, mockk()))
+        assertTrue(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -29,8 +38,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(7, 1437) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(7, 200)) + Array(6) { TimeRange(1400, 1437) }
 
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertTrue(validator.isValid(workTime, mockk()))
+        assertTrue(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -38,8 +47,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(3, 1433) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(3, 200)) + Array(6) { TimeRange(1400, 1433) }
 
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertTrue(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertTrue(validator.isValid(workTime, mockk()))
+        assertTrue(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -47,8 +56,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(3, 1437) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(3, 200)) + Array(6) { TimeRange(1400, 1437) }
 
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertFalse(validator.isValid(workTime, mockk()))
+        assertFalse(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -56,8 +65,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(5, 1439) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(5, 200)) + Array(6) { TimeRange(1400, 1439) }
 
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertFalse(validator.isValid(workTime, mockk()))
+        assertFalse(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -65,8 +74,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(1, 1435) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(1, 200)) + Array(6) { TimeRange(1400, 1435) }
 
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertFalse(validator.isValid(workTime, mockk()))
+        assertFalse(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -74,8 +83,8 @@ class WorkTimeBetweenDaysValidatorTest {
         val workTime = Array(6) { TimeRange(0, 1440) } + TimeRange(100, 200)
         val sundayMondayWorkTime = arrayOf(TimeRange(0, 100)) + Array(6) { TimeRange(1440, 1440) }
 
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTime))
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(sundayMondayWorkTime))
+        assertFalse(validator.isValid(workTime, mockk()))
+        assertFalse(validator.isValid(sundayMondayWorkTime, mockk()))
     }
 
     @Test
@@ -85,10 +94,10 @@ class WorkTimeBetweenDaysValidatorTest {
                 this[i] = TimeRange(100, 1438)
                 this[i + 1] = TimeRange(5, 100)
             }
-            assertFalse(WorkTimeBetweenDaysValidator().isValid(workTimeWithTwoInvalidDays))
+            assertFalse(validator.isValid(workTimeWithTwoInvalidDays, mockk()))
         }
         val workTimeWithInvalidSundayMonday = arrayOf(TimeRange(5, 200)) + Array(6) { TimeRange(1410, 1438) }
-        assertFalse(WorkTimeBetweenDaysValidator().isValid(workTimeWithInvalidSundayMonday))
+        assertFalse(validator.isValid(workTimeWithInvalidSundayMonday, mockk()))
     }
 
 }

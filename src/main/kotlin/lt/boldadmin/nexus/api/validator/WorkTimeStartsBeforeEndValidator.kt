@@ -1,9 +1,13 @@
 package lt.boldadmin.nexus.api.validator
 
+import lt.boldadmin.nexus.api.type.annotation.WorkTimeStartsBeforeEnd
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
+import javax.validation.ConstraintValidator
+import javax.validation.ConstraintValidatorContext
 
-class WorkTimeStartsBeforeEndValidator {
+class WorkTimeStartsBeforeEndValidator: ConstraintValidator<WorkTimeStartsBeforeEnd, Array<TimeRange>> {
 
-    fun isValid(workTime: Array<TimeRange>) = workTime.all { it.startOfDayInMinutes <= it.endOfDayInMinutes }
+    override fun isValid(workTime: Array<TimeRange>, context: ConstraintValidatorContext) =
+        workTime.all { it.startOfDayInMinutes <= it.endOfDayInMinutes }
 
 }
