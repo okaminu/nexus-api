@@ -7,7 +7,7 @@ class WorkTimeBetweenDaysValidator {
 
     fun isValid(workTime: Array<TimeRange>) =
         (DayOfWeek.values() + DayOfWeek.MONDAY)
-            .toList()
+            .asSequence()
             .zipWithNext()
             .all { (firstDay, secondDay) -> workTime[firstDay.ordinal] isDistanced workTime[secondDay.ordinal] }
 
