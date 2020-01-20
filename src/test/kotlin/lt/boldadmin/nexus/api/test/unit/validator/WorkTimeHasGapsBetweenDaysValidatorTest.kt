@@ -18,21 +18,21 @@ class WorkTimeHasGapsBetweenDaysValidatorTest {
     }
 
     @Test
-    fun `Validation passes when time gap between work days time is longer than 10 minutes`() {
+    fun `Validation passes when time gap between work days time is longer than 15 minutes`() {
         val workTime = Array(7) { TimeRange(100, 200) }
 
         assertTrue(validator.isValid(workTime, mockk()))
     }
 
     @Test
-    fun `Validation passes when time gap between work days time is equal to 10 minutes`() {
-        val workTime = Array(7) { TimeRange(3, 1433) }
+    fun `Validation passes when time gap between work days time is equal to 15 minutes`() {
+        val workTime = Array(7) { TimeRange(6, 1431) }
 
         assertTrue(validator.isValid(workTime, mockk()))
     }
 
     @Test
-    fun `Validation fails when time gap between work days time is shorter than 10 minutes`() {
+    fun `Validation fails when time gap between work days time is shorter than 15 minutes`() {
         val workTime = Array(7) { TimeRange(5, 1439) }
 
         assertFalse(validator.isValid(workTime, mockk()))
@@ -47,8 +47,8 @@ class WorkTimeHasGapsBetweenDaysValidatorTest {
 
     @Test
     fun `Validates every day`() {
-        val workTimeWithInvalidSaturdaySunday = Array(6) { TimeRange(1410, 1438) } + TimeRange(5, 200)
-        val workTimeWithInvalidSundayMonday = arrayOf(TimeRange(5, 200)) + Array(6) { TimeRange(1410, 1438) }
+        val workTimeWithInvalidSaturdaySunday = Array(6) { TimeRange(1410, 1438) } + TimeRange(8, 200)
+        val workTimeWithInvalidSundayMonday = arrayOf(TimeRange(8, 200)) + Array(6) { TimeRange(1410, 1438) }
 
         assertFalse(validator.isValid(workTimeWithInvalidSaturdaySunday, mockk()))
         assertFalse(validator.isValid(workTimeWithInvalidSundayMonday, mockk()))

@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [])
 annotation class WorkTimeHasGapsBetweenDays(
 
-    val message: String = "Work time between separate days cannot be shorter than 10 minutes",
+    val message: String = "Work time between separate days cannot be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

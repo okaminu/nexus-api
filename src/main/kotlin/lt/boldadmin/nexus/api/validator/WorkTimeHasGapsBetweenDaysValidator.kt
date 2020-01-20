@@ -19,7 +19,7 @@ class WorkTimeHasGapsBetweenDaysValidator: ConstraintValidator<WorkTimeHasGapsBe
 
     companion object {
         private val MINUTES_IN_A_DAY = 1440
-        private val MINIMUM_MINUTES_BETWEEN_WORK_DAYS = 10
+        private val MINIMUM_MINUTES_BETWEEN_WORK_DAYS = 15
     }
 
 }
