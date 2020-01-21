@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.test.unit.validator
 
-import io.mockk.mockk
+import io.mockk.*
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import lt.boldadmin.nexus.api.validator.WorkTimeStartsBeforeEndValidator
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -29,5 +29,16 @@ class WorkTimeStartsBeforeEndValidatorTest {
 
         assertFalse(WorkTimeStartsBeforeEndValidator().isValid(workTime, mockk()))
     }
+
+    @Test
+    fun `Validation short-circuits on first failure`() {
+        val workTimeSpy = spyk(TimeRange(30, 20))
+        val workTime = listOf(TimeRange(30, 20)) + workTimeSpy + List(5) { TimeRange(30, 20) }
+
+        WorkTimeStartsBeforeEndValidator().isValid(workTime, mockk())
+
+        verify { workTimeSpy wasNot called }
+    }
+
 
 }

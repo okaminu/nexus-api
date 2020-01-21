@@ -1,8 +1,6 @@
 package lt.boldadmin.nexus.api.test.unit.validator
 
-import io.mockk.mockk
-import io.mockk.spyk
-import io.mockk.verify
+import io.mockk.*
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import lt.boldadmin.nexus.api.validator.WorkTimeHasGapsBetweenDaysValidator
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -58,11 +56,12 @@ class WorkTimeHasGapsBetweenDaysValidatorTest {
 
     @Test
     fun `Validation short-circuits on first failure`() {
-        val workTimeSpy = spyk(List(7) { TimeRange(0, 1440) })
+        val workTimeSpy = spyk(TimeRange(0, 1440))
+        val workTime = List(2) { TimeRange(0, 1440) } + workTimeSpy + List(4) { TimeRange(0, 1440) }
 
-        validator.isValid(workTimeSpy, mockk())
+        validator.isValid(workTime, mockk())
 
-        verify(exactly = 0) { workTimeSpy[2] }
+        verify { workTimeSpy wasNot called }
     }
 
 }
