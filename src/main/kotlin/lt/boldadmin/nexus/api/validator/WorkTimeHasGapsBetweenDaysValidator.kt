@@ -6,9 +6,9 @@ import java.time.DayOfWeek
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 
-class WorkTimeHasGapsBetweenDaysValidator: ConstraintValidator<WorkTimeHasGapsBetweenDays, Array<TimeRange>> {
+class WorkTimeHasGapsBetweenDaysValidator: ConstraintValidator<WorkTimeHasGapsBetweenDays, List<TimeRange>> {
 
-    override fun isValid(workTime: Array<TimeRange>, context: ConstraintValidatorContext) =
+    override fun isValid(workTime: List<TimeRange>, context: ConstraintValidatorContext) =
         (DayOfWeek.values() + DayOfWeek.MONDAY)
             .asSequence()
             .zipWithNext()

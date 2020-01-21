@@ -22,7 +22,7 @@ class Collaborator(
     @field:MinimumWorkTimeLength
     @field:WorkTimeStartsBeforeEnd
     @field:WorkTimeHasGapsBetweenDays
-    var workTime: Array<TimeRange> = emptyArray(),
+    var workTime: List<TimeRange> = emptyList(),
 
     var enabledWorkDays: Set<DayOfWeek> = emptySet()
 
