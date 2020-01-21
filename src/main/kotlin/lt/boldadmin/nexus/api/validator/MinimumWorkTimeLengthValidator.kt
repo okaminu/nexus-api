@@ -5,9 +5,9 @@ import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 
-class MinimumWorkTimeLengthValidator: ConstraintValidator<MinimumWorkTimeLength, Array<TimeRange>> {
+class MinimumWorkTimeLengthValidator: ConstraintValidator<MinimumWorkTimeLength, List<TimeRange>> {
 
-    override fun isValid(workTime: Array<TimeRange>, context: ConstraintValidatorContext) =
+    override fun isValid(workTime: List<TimeRange>, context: ConstraintValidatorContext) =
         workTime.all{ it.endOfDayInMinutes - it.startOfDayInMinutes >= MINIMUM_MINUTES}
 
     companion object {

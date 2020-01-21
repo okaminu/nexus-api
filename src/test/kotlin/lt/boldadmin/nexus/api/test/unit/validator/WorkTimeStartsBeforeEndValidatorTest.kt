@@ -11,21 +11,21 @@ class WorkTimeStartsBeforeEndValidatorTest {
 
     @Test
     fun `Validation passes when all work days start time follows before end time`() {
-        val workTime = Array(7) { TimeRange(0, 100) }
+        val workTime = List(7) { TimeRange(0, 100) }
 
         assertTrue(WorkTimeStartsBeforeEndValidator().isValid(workTime, mockk()))
     }
 
     @Test
     fun `Validation passes when work days start time equals end time`() {
-        val workTime = Array(7) { TimeRange(100, 100) }
+        val workTime = List(7) { TimeRange(100, 100) }
 
         assertTrue(WorkTimeStartsBeforeEndValidator().isValid(workTime, mockk()))
     }
 
     @Test
     fun `Validation fails when at least one work day start time follows after end time`() {
-        val workTime = Array(6) { TimeRange(0, 100) } + TimeRange(30, 20)
+        val workTime = List(6) { TimeRange(0, 100) } + TimeRange(30, 20)
 
         assertFalse(WorkTimeStartsBeforeEndValidator().isValid(workTime, mockk()))
     }

@@ -11,21 +11,21 @@ class MinimumWorkTimeLengthValidatorTest {
 
     @Test
     fun `Validation passes when all work days time is not shorter than 15 minutes`() {
-        val workTime = Array(7) { TimeRange(0, 100) }
+        val workTime = List(7) { TimeRange(0, 100) }
 
         assertTrue(MinimumWorkTimeLengthValidator().isValid(workTime, mockk()))
     }
 
     @Test
     fun `Validation passes when work days with length of 15 minutes are contained`() {
-        val workTime = Array(7) { TimeRange(5, 20) }
+        val workTime = List(7) { TimeRange(5, 20) }
 
         assertTrue(MinimumWorkTimeLengthValidator().isValid(workTime, mockk()))
     }
 
     @Test
     fun `Validation fails when at least one work day time is shorter than 15 minutes`() {
-        val workTime = Array(6) { TimeRange(0, 100) } + TimeRange(20, 30)
+        val workTime = List(6) { TimeRange(0, 100) } + TimeRange(20, 30)
 
         assertFalse(MinimumWorkTimeLengthValidator().isValid(workTime, mockk()))
     }
