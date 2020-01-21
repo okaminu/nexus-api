@@ -56,4 +56,13 @@ class WorkTimeHasGapsBetweenDaysValidatorTest {
         assertFalse(validator.isValid(workTimeWithInvalidSundayMonday, mockk()))
     }
 
+    @Test
+    fun `Validation short-circuits on first failure`() {
+        val workTimeSpy = spyk(List(7) { TimeRange(0, 1440) })
+
+        validator.isValid(workTimeSpy, mockk())
+
+        verify(exactly = 0) { workTimeSpy[2] }
+    }
+
 }
