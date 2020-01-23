@@ -1,9 +1,8 @@
-package lt.boldadmin.nexus.api.type.entity.collaborator
+package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.MinimumWorkTimeLength
 import lt.boldadmin.nexus.api.type.annotation.WorkTimeHasGapsBetweenDays
 import lt.boldadmin.nexus.api.type.annotation.WorkTimeStartsBeforeEnd
-import lt.boldadmin.nexus.api.type.entity.Person
 import lt.boldadmin.nexus.api.type.valueobject.TimeRange
 import java.time.DayOfWeek
 import javax.validation.constraints.Min
