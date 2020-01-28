@@ -95,7 +95,7 @@ class WorkDayTest {
 
         @Test
         fun `Generates hash code`() {
-            assertEquals(3209648, WorkDay(TimeRange(100, 200), false, 1).hashCode())
+            assertEquals(1, WorkDay(TimeRange(100, 200), false, 1).hashCode())
         }
 
         @Test

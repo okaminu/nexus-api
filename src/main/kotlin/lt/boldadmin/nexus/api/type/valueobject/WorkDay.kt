@@ -10,11 +10,6 @@ data class WorkDay(
 
     override fun equals(other: Any?): Boolean = other is WorkDay && this.compareTo(other) == 0
 
-    override fun hashCode(): Int {
-        var result = time.hashCode()
-        result = 31 * result + isEnabled.hashCode()
-        result = 31 * result + day
-        return result
-    }
+    override fun hashCode(): Int = day
 
 }
