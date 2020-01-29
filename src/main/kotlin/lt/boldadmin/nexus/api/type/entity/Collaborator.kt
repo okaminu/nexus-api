@@ -3,7 +3,7 @@ package lt.boldadmin.nexus.api.type.entity
 import lt.boldadmin.nexus.api.type.annotation.MinimumWorkTimeLength
 import lt.boldadmin.nexus.api.type.annotation.WorkTimeHasGapsBetweenDays
 import lt.boldadmin.nexus.api.type.annotation.WorkTimeStartsBeforeEnd
-import lt.boldadmin.nexus.api.type.valueobject.WorkDay
+import lt.boldadmin.nexus.api.type.valueobject.DayTime
 import java.util.*
 import javax.validation.constraints.Min
 import javax.validation.constraints.Size
@@ -21,7 +21,7 @@ class Collaborator(
     @field:MinimumWorkTimeLength
     @field:WorkTimeStartsBeforeEnd
     @field:WorkTimeHasGapsBetweenDays
-    var workWeek: SortedSet<WorkDay> = sortedSetOf()
+    var workWeek: SortedSet<DayTime> = sortedSetOf()
 
 ): Person() {
 
