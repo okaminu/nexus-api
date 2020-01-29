@@ -18,28 +18,28 @@ class WorkTimeHasGapsBetweenDaysValidatorTest {
     }
 
     @Test
-    fun `Validation passes when time gap between work days time is longer than 15 minutes`() {
+    fun `Validation passes when time gap between day times is longer than 15 minutes`() {
         val workTime = List(7) { TimeRange(100, 200) }
 
         assertTrue(validator.isValid(workTime, mockk()))
     }
 
     @Test
-    fun `Validation passes when time gap between work days time is equal to 15 minutes`() {
+    fun `Validation passes when time gap between day times is equal to 15 minutes`() {
         val workTime = List(7) { TimeRange(6, 1431) }
 
         assertTrue(validator.isValid(workTime, mockk()))
     }
 
     @Test
-    fun `Validation fails when time gap between work days time is shorter than 15 minutes`() {
+    fun `Validation fails when time gap between day times is shorter than 15 minutes`() {
         val workTime = List(7) { TimeRange(5, 1439) }
 
         assertFalse(validator.isValid(workTime, mockk()))
     }
 
     @Test
-    fun `Validation fails when there is no time gap between work days time`() {
+    fun `Validation fails when there is no time gap between day times`() {
         val workTime = List(7) { TimeRange(0, 1440) }
 
         assertFalse(validator.isValid(workTime, mockk()))
