@@ -48,7 +48,7 @@ class DayTimeExtensionsTest {
     fun `Changes desired day times to enabled state`() {
         val timeRange = TimeRange(100, 300)
 
-        val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).setEnabled(FRIDAY, SUNDAY)
+        val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).withEnabled(FRIDAY, SUNDAY)
 
         assertTrue(sortedDayTimes[FRIDAY].isEnabled)
         assertTrue(sortedDayTimes[SUNDAY].isEnabled)
@@ -66,7 +66,7 @@ class DayTimeExtensionsTest {
                 DayTime(timeRange, false, MONDAY.ordinal),
                 DayTime(timeRange, true, TUESDAY.ordinal),
                 DayTime(timeRange, true, WEDNESDAY.ordinal)
-            ).setDisabled(TUESDAY, WEDNESDAY)
+            ).withDisabled(TUESDAY, WEDNESDAY)
 
         assertFalse(sortedDayTimes[TUESDAY].isEnabled)
         assertFalse(sortedDayTimes[WEDNESDAY].isEnabled)
@@ -79,7 +79,7 @@ class DayTimeExtensionsTest {
         val timeRange = TimeRange(100, 300)
         val newTimeRange = TimeRange(400, 600)
 
-        val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).setTime(newTimeRange, FRIDAY)
+        val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).withTime(newTimeRange, FRIDAY)
 
         assertEquals(newTimeRange, sortedDayTimes[FRIDAY].time)
         assertEquals(sortedDayTimes[THURSDAY].isEnabled, sortedDayTimes[FRIDAY].isEnabled)

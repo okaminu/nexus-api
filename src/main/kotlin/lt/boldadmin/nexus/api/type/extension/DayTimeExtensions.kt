@@ -14,16 +14,16 @@ fun createSortedDaysOfWeek(time: TimeRange) =
 operator fun SortedSet<DayTime>.get(day: DayOfWeek): DayTime =
     this.find { it.dayOfWeekIndex == day.ordinal } ?: throw NoSuchElementException()
 
-fun SortedSet<DayTime>.setEnabled(vararg days: DayOfWeek) = changeEnabledStatus(true, *days)
+fun SortedSet<DayTime>.withEnabled(vararg days: DayOfWeek) = withEnabledStatus(true, *days)
 
-fun SortedSet<DayTime>.setDisabled(vararg days: DayOfWeek) = changeEnabledStatus(false, *days)
+fun SortedSet<DayTime>.withDisabled(vararg days: DayOfWeek) = withEnabledStatus(false, *days)
 
-fun SortedSet<DayTime>.setTime(time: TimeRange, day: DayOfWeek) =
+fun SortedSet<DayTime>.withTime(time: TimeRange, day: DayOfWeek) =
     this.toMutableList().apply {
         this[day.ordinal] = this[day.ordinal].copy(time = time)
     }.toSortedSet()
 
-private fun SortedSet<DayTime>.changeEnabledStatus(isEnabled: Boolean, vararg days: DayOfWeek): SortedSet<DayTime> =
+private fun SortedSet<DayTime>.withEnabledStatus(isEnabled: Boolean, vararg days: DayOfWeek): SortedSet<DayTime> =
     this.toMutableList().apply {
         days.forEach { day ->
             this[day.ordinal] = this[day.ordinal].copy(isEnabled = isEnabled)
