@@ -23,9 +23,9 @@ fun SortedSet<DayTime>.withTime(time: TimeRange, day: DayOfWeek) =
         this[day.ordinal] = this[day.ordinal].copy(time = time)
     }.toSortedSet()
 
-private fun SortedSet<DayTime>.withEnabledStatus(isEnabled: Boolean, vararg days: DayOfWeek): SortedSet<DayTime> =
+private fun SortedSet<DayTime>.withEnabledStatus(enabled: Boolean, vararg days: DayOfWeek): SortedSet<DayTime> =
     this.toMutableList().apply {
         days.forEach { day ->
-            this[day.ordinal] = this[day.ordinal].copy(isEnabled = isEnabled)
+            this[day.ordinal] = this[day.ordinal].copy(enabled = enabled)
         }
     }.toSortedSet()

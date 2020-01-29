@@ -50,9 +50,9 @@ class DayTimeExtensionsTest {
 
         val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).withEnabled(FRIDAY, SUNDAY)
 
-        assertTrue(sortedDayTimes[FRIDAY].isEnabled)
-        assertTrue(sortedDayTimes[SUNDAY].isEnabled)
-        assertFalse(sortedDayTimes[THURSDAY].isEnabled)
+        assertTrue(sortedDayTimes[FRIDAY].enabled)
+        assertTrue(sortedDayTimes[SUNDAY].enabled)
+        assertFalse(sortedDayTimes[THURSDAY].enabled)
         assertEquals(timeRange, sortedDayTimes[FRIDAY].time)
         assertEquals(timeRange, sortedDayTimes[SUNDAY].time)
     }
@@ -68,8 +68,8 @@ class DayTimeExtensionsTest {
                 DayTime(timeRange, true, WEDNESDAY.ordinal)
             ).withDisabled(TUESDAY, WEDNESDAY)
 
-        assertFalse(sortedDayTimes[TUESDAY].isEnabled)
-        assertFalse(sortedDayTimes[WEDNESDAY].isEnabled)
+        assertFalse(sortedDayTimes[TUESDAY].enabled)
+        assertFalse(sortedDayTimes[WEDNESDAY].enabled)
         assertEquals(timeRange, sortedDayTimes[TUESDAY].time)
         assertEquals(timeRange, sortedDayTimes[WEDNESDAY].time)
     }
@@ -82,7 +82,7 @@ class DayTimeExtensionsTest {
         val sortedDayTimes: SortedSet<DayTime> = createSortedDaysOfWeek(timeRange).withTime(newTimeRange, FRIDAY)
 
         assertEquals(newTimeRange, sortedDayTimes[FRIDAY].time)
-        assertEquals(sortedDayTimes[THURSDAY].isEnabled, sortedDayTimes[FRIDAY].isEnabled)
+        assertEquals(sortedDayTimes[THURSDAY].enabled, sortedDayTimes[FRIDAY].enabled)
     }
 
 }

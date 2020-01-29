@@ -2,7 +2,7 @@ package lt.boldadmin.nexus.api.type.valueobject
 
 data class DayTime(
     val time: TimeRange = TimeRange(),
-    val isEnabled: Boolean = false,
+    val enabled: Boolean = false,
     val dayOfWeekIndex: Int = 0
 ): Comparable<DayTime> {
 
