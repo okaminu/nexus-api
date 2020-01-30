@@ -7,7 +7,7 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class WorkWeekValidInput(
+annotation class ValidWorkWeekInput(
 
     val message: String = "Invalid work week input for Collaborator",
     val groups: Array<KClass<*>> = [],

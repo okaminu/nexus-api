@@ -14,7 +14,7 @@ class Collaborator(
     @field:Min(0)
     var orderNumber: Short = 0,
 
-    @field:WorkWeekValidInput
+    @field:ValidWorkWeekInput
     @field:MinimumWorkTimeLength
     @field:WorkTimeStartsBeforeEnd
     @field:WorkTimeHasGapsBetweenDays
