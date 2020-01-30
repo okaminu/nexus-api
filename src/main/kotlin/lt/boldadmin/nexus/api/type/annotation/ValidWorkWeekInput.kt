@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [])
 annotation class ValidWorkWeekInput(
 
-    val message: String = "Invalid work week input for Collaborator",
+    val message: String = "Invalid work week input",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 
