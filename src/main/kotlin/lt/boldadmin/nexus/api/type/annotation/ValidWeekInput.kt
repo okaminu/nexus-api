@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class WorkTimeHasGapsBetweenDays(
+annotation class ValidWeekInput(
 
-    val message: String = "Work time between separate days cannot be shorter than 15 minutes",
+    val message: String = "Invalid week input",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

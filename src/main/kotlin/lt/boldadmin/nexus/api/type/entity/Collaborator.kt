@@ -14,10 +14,10 @@ class Collaborator(
     @field:Min(0)
     var orderNumber: Short = 0,
 
-    @field:ValidWorkWeekInput
-    @field:WorkTimeStartsBeforeEnd
-    @field:MinimumWorkTimeLength
-    @field:WorkTimeHasGapsBetweenDays
+    @field:ValidWeekInput
+    @field:DayMinutesStartBeforeEnd
+    @field:MinuteRangeMinLength
+    @field:MinuteRangesHaveGapsBetweenDays
     var workWeek: SortedSet<Day> = sortedSetOf()
 
 ): Person() {

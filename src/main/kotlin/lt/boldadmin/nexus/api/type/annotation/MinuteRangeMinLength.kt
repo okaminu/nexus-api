@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class ValidWorkWeekInput(
+annotation class MinuteRangeMinLength(
 
-    val message: String = "Invalid work week input",
+    val message: String = "Minute range cannot be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

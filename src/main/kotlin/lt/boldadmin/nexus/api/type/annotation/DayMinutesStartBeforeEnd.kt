@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class WorkTimeStartsBeforeEnd(
+annotation class DayMinutesStartBeforeEnd(
 
-    val message: String = "Work time cannot end before start",
+    val message: String = "Minutes cannot end before start",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

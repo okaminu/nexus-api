@@ -12,17 +12,20 @@ class DayTest {
     inner class ComparisonTests {
 
         @Test
-        fun `Returns 0 when same day time are compared`() {
-            assertEquals(0, Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2).compareTo(Day(dayOfWeekIndex = 2)))
+        fun `Returns 0 when same days of week are compared`() {
+            assertEquals(
+                0,
+                Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2).compareTo(Day(dayOfWeekIndex = 2))
+            )
         }
 
         @Test
-        fun `Returns 1 when day time is compared to the previous day's`() {
+        fun `Returns 1 when day is compared to the previous day`() {
             assertEquals(1, Day(dayOfWeekIndex = 3).compareTo(Day(dayOfWeekIndex = 2)))
         }
 
         @Test
-        fun `Returns -1 when day time is compared to the following day's`() {
+        fun `Returns -1 when day is compared to the following day`() {
             assertEquals(-1, Day(dayOfWeekIndex = 2).compareTo(Day(dayOfWeekIndex = 3)))
         }
 
@@ -32,12 +35,12 @@ class DayTest {
     inner class EqualityTests {
 
         @Test
-        fun `Returns true when same day time are compared`() {
+        fun `Returns true when same days of week are compared`() {
             assertTrue(Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 2))
         }
 
         @Test
-        fun `Returns false when different day times are compared`() {
+        fun `Returns false when different days are compared`() {
             assertFalse(Day(dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 3))
         }
 
@@ -99,7 +102,7 @@ class DayTest {
         }
 
         @Test
-        fun `Equal day times have equal hash code`() {
+        fun `Equal days have equal hash code`() {
             val firstWorkDay = Day(dayOfWeekIndex = 2)
             val secondWorkDay = Day(dayOfWeekIndex = 2)
 
