@@ -1,29 +1,29 @@
 package lt.boldadmin.nexus.api.test.unit.type.valueobject
 
-import lt.boldadmin.nexus.api.type.valueobject.DayTime
-import lt.boldadmin.nexus.api.type.valueobject.TimeRange
+import lt.boldadmin.nexus.api.type.valueobject.Day
+import lt.boldadmin.nexus.api.type.valueobject.MinuteRange
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class DayTimeTest {
+class DayTest {
 
     @Nested
     inner class ComparisonTests {
 
         @Test
         fun `Returns 0 when same day time are compared`() {
-            assertEquals(0, DayTime(time = TimeRange(10, 20), dayOfWeekIndex = 2).compareTo(DayTime(dayOfWeekIndex = 2)))
+            assertEquals(0, Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2).compareTo(Day(dayOfWeekIndex = 2)))
         }
 
         @Test
         fun `Returns 1 when day time is compared to the previous day's`() {
-            assertEquals(1, DayTime(dayOfWeekIndex = 3).compareTo(DayTime(dayOfWeekIndex = 2)))
+            assertEquals(1, Day(dayOfWeekIndex = 3).compareTo(Day(dayOfWeekIndex = 2)))
         }
 
         @Test
         fun `Returns -1 when day time is compared to the following day's`() {
-            assertEquals(-1, DayTime(dayOfWeekIndex = 2).compareTo(DayTime(dayOfWeekIndex = 3)))
+            assertEquals(-1, Day(dayOfWeekIndex = 2).compareTo(Day(dayOfWeekIndex = 3)))
         }
 
     }
@@ -33,31 +33,31 @@ class DayTimeTest {
 
         @Test
         fun `Returns true when same day time are compared`() {
-            assertTrue(DayTime(time = TimeRange(10, 20), dayOfWeekIndex = 2) == DayTime(dayOfWeekIndex = 2))
+            assertTrue(Day(minuteRange = MinuteRange(10, 20), dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 2))
         }
 
         @Test
         fun `Returns false when different day times are compared`() {
-            assertFalse(DayTime(dayOfWeekIndex = 2) == DayTime(dayOfWeekIndex = 3))
+            assertFalse(Day(dayOfWeekIndex = 2) == Day(dayOfWeekIndex = 3))
         }
 
         @Test
         @Suppress("ReplaceCallWithBinaryOperator")
         fun `Returns false when comparing with other types`() {
-            assertFalse(DayTime().equals(Pair("", "")))
+            assertFalse(Day().equals(Pair("", "")))
         }
 
         @Test
         fun `Is reflexive`() {
-            val workDay = DayTime(dayOfWeekIndex = 2)
+            val workDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(workDay == workDay)
         }
 
         @Test
         fun `Is symmetric`() {
-            val firstWorkDay = DayTime(dayOfWeekIndex = 2)
-            val secondWorkDay = DayTime(dayOfWeekIndex = 2)
+            val firstWorkDay = Day(dayOfWeekIndex = 2)
+            val secondWorkDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(secondWorkDay == firstWorkDay)
@@ -65,9 +65,9 @@ class DayTimeTest {
 
         @Test
         fun `Is transitive`() {
-            val firstWorkDay = DayTime(dayOfWeekIndex = 2)
-            val secondWorkDay = DayTime(dayOfWeekIndex = 2)
-            val thirdWorkDay = DayTime(dayOfWeekIndex = 2)
+            val firstWorkDay = Day(dayOfWeekIndex = 2)
+            val secondWorkDay = Day(dayOfWeekIndex = 2)
+            val thirdWorkDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay == thirdWorkDay)
@@ -75,8 +75,8 @@ class DayTimeTest {
 
         @Test
         fun `Is consistent`() {
-            val firstWorkDay = DayTime(dayOfWeekIndex = 2)
-            val secondWorkDay = DayTime(dayOfWeekIndex = 2)
+            val firstWorkDay = Day(dayOfWeekIndex = 2)
+            val secondWorkDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay == secondWorkDay)
@@ -85,7 +85,7 @@ class DayTimeTest {
         @Test
         @Suppress("SENSELESS_COMPARISON")
         fun `Never equal to null`() {
-            assertFalse(DayTime(dayOfWeekIndex = 2) == null)
+            assertFalse(Day(dayOfWeekIndex = 2) == null)
         }
 
     }
@@ -95,13 +95,13 @@ class DayTimeTest {
 
         @Test
         fun `Generates hash code`() {
-            assertEquals(1, DayTime(TimeRange(100, 200), false, 1).hashCode())
+            assertEquals(1, Day(MinuteRange(100, 200), false, 1).hashCode())
         }
 
         @Test
         fun `Equal day times have equal hash code`() {
-            val firstWorkDay = DayTime(dayOfWeekIndex = 2)
-            val secondWorkDay = DayTime(dayOfWeekIndex = 2)
+            val firstWorkDay = Day(dayOfWeekIndex = 2)
+            val secondWorkDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay.hashCode() == secondWorkDay.hashCode())
@@ -109,7 +109,7 @@ class DayTimeTest {
 
         @Test
         fun `Is consistent`() {
-            val workDay = DayTime(dayOfWeekIndex = 2)
+            val workDay = Day(dayOfWeekIndex = 2)
 
             assertTrue(workDay.hashCode() == workDay.hashCode())
             assertTrue(workDay.hashCode() == workDay.hashCode())

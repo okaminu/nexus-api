@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.*
-import lt.boldadmin.nexus.api.type.valueobject.DayTime
+import lt.boldadmin.nexus.api.type.valueobject.Day
 import java.util.*
 import javax.validation.constraints.Min
 
@@ -15,10 +15,10 @@ class Collaborator(
     var orderNumber: Short = 0,
 
     @field:ValidWorkWeekInput
-    @field:MinimumWorkTimeLength
     @field:WorkTimeStartsBeforeEnd
+    @field:MinimumWorkTimeLength
     @field:WorkTimeHasGapsBetweenDays
-    var workWeek: SortedSet<DayTime> = sortedSetOf()
+    var workWeek: SortedSet<Day> = sortedSetOf()
 
 ): Person() {
 
