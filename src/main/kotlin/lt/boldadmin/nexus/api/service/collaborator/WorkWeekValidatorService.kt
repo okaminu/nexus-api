@@ -5,5 +5,5 @@ import lt.boldadmin.nexus.api.type.valueobject.WeekConstraintViolation
 import java.util.*
 
 interface WorkWeekValidatorService {
-    fun getConstraintViolations(workWeek: SortedSet<Day>): Set<WeekConstraintViolation>
+    fun validate(workWeek: SortedSet<Day>): Set<WeekConstraintViolation>
 }
