@@ -4,7 +4,7 @@ import java.time.DayOfWeek
 import java.time.DayOfWeek.MONDAY
 
 data class Day(
-    val minuteRange: MinuteRange = MinuteRange(),
+    val minuteInterval: MinuteRange = MinuteRange(),
     val enabled: Boolean = false,
     val dayOfWeek: DayOfWeek = MONDAY
 ): Comparable<Day> {
