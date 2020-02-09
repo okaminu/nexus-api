@@ -17,7 +17,7 @@ class DayTest {
         fun `Returns 0 when same days of week are compared`() {
             assertEquals(
                 0,
-                Day(minuteInterval = MinuteRange(10, 20), dayOfWeek = TUESDAY).compareTo(Day(dayOfWeek = TUESDAY))
+                Day(minuteRange = MinuteRange(10, 20), dayOfWeek = TUESDAY).compareTo(Day(dayOfWeek = TUESDAY))
             )
         }
 
@@ -38,7 +38,7 @@ class DayTest {
 
         @Test
         fun `Returns true when same days of week are compared`() {
-            assertTrue(Day(minuteInterval = MinuteRange(10, 20), dayOfWeek = TUESDAY) == Day(dayOfWeek = TUESDAY))
+            assertTrue(Day(minuteRange = MinuteRange(10, 20), dayOfWeek = TUESDAY) == Day(dayOfWeek = TUESDAY))
         }
 
         @Test
