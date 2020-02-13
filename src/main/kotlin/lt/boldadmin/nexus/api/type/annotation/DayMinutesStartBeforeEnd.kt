@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [])
 annotation class DayMinutesStartBeforeEnd(
 
-    val message: String = "Minutes cannot end before start",
+    val message: String = "Minutes can't end before start",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

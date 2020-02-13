@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [])
 annotation class MinuteRangesHaveGapsBetweenDays(
 
-    val message: String = "Day gaps cannot be shorter than 15 minutes",
+    val message: String = "Day gaps can't be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 
