@@ -5,7 +5,7 @@ import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
 import java.util.*
 import javax.validation.constraints.Min
 
-class Collaborator(
+data class Collaborator(
 
     var hseCardNumber: String = "",
 
