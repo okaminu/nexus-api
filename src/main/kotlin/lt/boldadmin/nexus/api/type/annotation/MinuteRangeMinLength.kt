@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 @Constraint(validatedBy = [])
 annotation class MinuteRangeMinLength(
 
-    val message: String = "Minute range cannot be shorter than 15 minutes",
+    val message: String = "Duration cannot be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 
