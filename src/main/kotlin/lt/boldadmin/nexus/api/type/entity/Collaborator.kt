@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.*
-import lt.boldadmin.nexus.api.type.valueobject.Day
+import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
 import java.util.*
 import javax.validation.constraints.Min
 
@@ -19,7 +19,7 @@ class Collaborator(
     @field:DayMinutesStartBeforeEnd
     @field:MinuteRangeMinLength
     @field:MinuteRangesHaveGapsBetweenDays
-    var workWeek: SortedSet<Day> = sortedSetOf()
+    var workWeek: SortedSet<DayMinuteInterval> = sortedSetOf()
 
 ): Person() {
 

@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.service.collaborator
 
 import lt.boldadmin.nexus.api.type.entity.Collaborator
-import lt.boldadmin.nexus.api.type.valueobject.Day
+import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
 import java.util.*
 
 interface CollaboratorService {
@@ -12,6 +12,6 @@ interface CollaboratorService {
     fun existsById(id: String): Boolean
     fun existsByMobileNumber(number: String): Boolean
     fun update(id: String, attributeName: String, attributeValue: String)
-    fun update(id: String, workWeek: SortedSet<Day>)
+    fun update(id: String, workWeek: SortedSet<DayMinuteInterval>)
     fun updateOrderNumber(collaboratorId: String, orderNumber: Short)
 }

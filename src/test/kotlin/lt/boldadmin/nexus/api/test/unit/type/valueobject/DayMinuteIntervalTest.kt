@@ -1,34 +1,34 @@
 package lt.boldadmin.nexus.api.test.unit.type.valueobject
 
-import lt.boldadmin.nexus.api.type.valueobject.Day
-import lt.boldadmin.nexus.api.type.valueobject.MinuteRange
+import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
+import lt.boldadmin.nexus.api.type.valueobject.MinuteInterval
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import java.time.DayOfWeek.TUESDAY
 import java.time.DayOfWeek.WEDNESDAY
 
-class DayTest {
+class DayMinuteIntervalTest {
 
     @Nested
     inner class ComparisonTests {
 
         @Test
-        fun `Returns 0 when same days of week are compared`() {
+        fun `Returns 0 when same days minute intervals are compared`() {
             assertEquals(
                 0,
-                Day(minuteRange = MinuteRange(10, 20), dayOfWeek = TUESDAY).compareTo(Day(dayOfWeek = TUESDAY))
+                DayMinuteInterval(TUESDAY, MinuteInterval(10, 20)).compareTo(DayMinuteInterval(TUESDAY))
             )
         }
 
         @Test
         fun `Returns 1 when day is compared to the previous day`() {
-            assertEquals(1, Day(dayOfWeek = WEDNESDAY).compareTo(Day(dayOfWeek = TUESDAY)))
+            assertEquals(1, DayMinuteInterval(WEDNESDAY).compareTo(DayMinuteInterval(TUESDAY)))
         }
 
         @Test
         fun `Returns -1 when day is compared to the following day`() {
-            assertEquals(-1, Day(dayOfWeek = TUESDAY).compareTo(Day(dayOfWeek = WEDNESDAY)))
+            assertEquals(-1, DayMinuteInterval(TUESDAY).compareTo(DayMinuteInterval(WEDNESDAY)))
         }
 
     }
@@ -38,31 +38,31 @@ class DayTest {
 
         @Test
         fun `Returns true when same days of week are compared`() {
-            assertTrue(Day(minuteRange = MinuteRange(10, 20), dayOfWeek = TUESDAY) == Day(dayOfWeek = TUESDAY))
+            assertTrue(DayMinuteInterval(TUESDAY, MinuteInterval(10, 20)) == DayMinuteInterval(TUESDAY))
         }
 
         @Test
         fun `Returns false when different days are compared`() {
-            assertFalse(Day(dayOfWeek = TUESDAY) == Day(dayOfWeek = WEDNESDAY))
+            assertFalse(DayMinuteInterval(TUESDAY) == DayMinuteInterval(WEDNESDAY))
         }
 
         @Test
         @Suppress("ReplaceCallWithBinaryOperator")
         fun `Returns false when comparing with other types`() {
-            assertFalse(Day().equals(Pair("", "")))
+            assertFalse(DayMinuteInterval().equals(Pair("", "")))
         }
 
         @Test
         fun `Is reflexive`() {
-            val workDay = Day(dayOfWeek = TUESDAY)
+            val workDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(workDay == workDay)
         }
 
         @Test
         fun `Is symmetric`() {
-            val firstWorkDay = Day(dayOfWeek = TUESDAY)
-            val secondWorkDay = Day(dayOfWeek = TUESDAY)
+            val firstWorkDay = DayMinuteInterval(TUESDAY)
+            val secondWorkDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(secondWorkDay == firstWorkDay)
@@ -70,9 +70,9 @@ class DayTest {
 
         @Test
         fun `Is transitive`() {
-            val firstWorkDay = Day(dayOfWeek = TUESDAY)
-            val secondWorkDay = Day(dayOfWeek = TUESDAY)
-            val thirdWorkDay = Day(dayOfWeek = TUESDAY)
+            val firstWorkDay = DayMinuteInterval(TUESDAY)
+            val secondWorkDay = DayMinuteInterval(TUESDAY)
+            val thirdWorkDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay == thirdWorkDay)
@@ -80,8 +80,8 @@ class DayTest {
 
         @Test
         fun `Is consistent`() {
-            val firstWorkDay = Day(dayOfWeek = TUESDAY)
-            val secondWorkDay = Day(dayOfWeek = TUESDAY)
+            val firstWorkDay = DayMinuteInterval(TUESDAY)
+            val secondWorkDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay == secondWorkDay)
@@ -90,7 +90,7 @@ class DayTest {
         @Test
         @Suppress("SENSELESS_COMPARISON")
         fun `Never equal to null`() {
-            assertFalse(Day(dayOfWeek = TUESDAY) == null)
+            assertFalse(DayMinuteInterval(TUESDAY) == null)
         }
 
     }
@@ -100,13 +100,13 @@ class DayTest {
 
         @Test
         fun `Generates hash code`() {
-            assertEquals(1, Day(MinuteRange(100, 200), false, TUESDAY).hashCode())
+            assertEquals(1, DayMinuteInterval(TUESDAY, MinuteInterval(100, 200), false).hashCode())
         }
 
         @Test
         fun `Equal days have equal hash code`() {
-            val firstWorkDay = Day(dayOfWeek = TUESDAY)
-            val secondWorkDay = Day(dayOfWeek = TUESDAY)
+            val firstWorkDay = DayMinuteInterval(TUESDAY)
+            val secondWorkDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(firstWorkDay == secondWorkDay)
             assertTrue(firstWorkDay.hashCode() == secondWorkDay.hashCode())
@@ -114,7 +114,7 @@ class DayTest {
 
         @Test
         fun `Is consistent`() {
-            val workDay = Day(dayOfWeek = TUESDAY)
+            val workDay = DayMinuteInterval(TUESDAY)
 
             assertTrue(workDay.hashCode() == workDay.hashCode())
             assertTrue(workDay.hashCode() == workDay.hashCode())
