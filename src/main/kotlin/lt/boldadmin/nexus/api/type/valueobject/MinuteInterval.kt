@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.type.valueobject
 
-data class MinuteInterval(var start: Short = 0, var end: Short = 0) {
+data class MinuteInterval(val start: Short, val end: Short) {
 
     companion object {
         const val MIN: Short = 0
