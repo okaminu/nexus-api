@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.service.worklog
 
-import lt.boldadmin.nexus.api.type.valueobject.DateRange
+import lt.boldadmin.nexus.api.type.valueobject.time.DateRange
 
 interface WorklogDurationService {
     fun measureDuration(intervalId: String): Long

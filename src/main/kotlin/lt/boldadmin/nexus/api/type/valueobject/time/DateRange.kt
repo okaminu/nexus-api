@@ -1,4 +1,4 @@
-package lt.boldadmin.nexus.api.type.valueobject
+package lt.boldadmin.nexus.api.type.valueobject.time
 
 import java.time.LocalDate
 

@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.type.entity
 
 import lt.boldadmin.nexus.api.type.annotation.*
-import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
+import lt.boldadmin.nexus.api.type.valueobject.time.DayMinuteInterval
 import java.util.*
 import javax.validation.constraints.Min
 

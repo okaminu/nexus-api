@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Worklog
-import lt.boldadmin.nexus.api.type.valueobject.DateRange
+import lt.boldadmin.nexus.api.type.valueobject.time.DateRange
 
 interface WorklogRepository {
 

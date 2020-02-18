@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.service.worklog
 
 import lt.boldadmin.nexus.api.type.entity.Worklog
-import lt.boldadmin.nexus.api.type.valueobject.DateRange
+import lt.boldadmin.nexus.api.type.valueobject.time.DateRange
 
 interface WorklogService {
     fun save(worklog: Worklog)

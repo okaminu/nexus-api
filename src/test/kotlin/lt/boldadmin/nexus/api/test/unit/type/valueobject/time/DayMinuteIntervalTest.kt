@@ -1,7 +1,7 @@
-package lt.boldadmin.nexus.api.test.unit.type.valueobject
+package lt.boldadmin.nexus.api.test.unit.type.valueobject.time
 
-import lt.boldadmin.nexus.api.type.valueobject.DayMinuteInterval
-import lt.boldadmin.nexus.api.type.valueobject.MinuteInterval
+import lt.boldadmin.nexus.api.type.valueobject.time.DayMinuteInterval
+import lt.boldadmin.nexus.api.type.valueobject.time.MinuteInterval
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test

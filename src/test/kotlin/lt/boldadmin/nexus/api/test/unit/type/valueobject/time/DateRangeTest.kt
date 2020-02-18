@@ -1,6 +1,6 @@
-package lt.boldadmin.nexus.api.test.unit.type.valueobject
+package lt.boldadmin.nexus.api.test.unit.type.valueobject.time
 
-import lt.boldadmin.nexus.api.type.valueobject.DateRange
+import lt.boldadmin.nexus.api.type.valueobject.time.DateRange
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
