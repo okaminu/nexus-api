@@ -17,8 +17,8 @@ class Collaborator(
     @field:WeekSize
     @field:BoundedMinuteIntervals
     @field:DayMinutesStartBeforeEnd
-    @field:MinuteRangeMinLength
-    @field:MinuteRangesHaveGapsBetweenDays
+    @field:MinuteIntervalMinLength
+    @field:MinuteIntervalsHaveGapsBetweenDays
     var workWeek: SortedSet<DayMinuteInterval> = sortedSetOf()
 
 ): Person() {
