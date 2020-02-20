@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class MinuteIntervalsHaveGapsBetweenDays(
+annotation class SevenDayWeek(
 
-    val message: String = "Day gaps can't be shorter than 15 minutes",
+    val message: String = "Week must contain 7 days",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

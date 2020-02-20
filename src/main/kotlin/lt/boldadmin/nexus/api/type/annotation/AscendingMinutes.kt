@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class MinuteIntervalMinLength(
+annotation class AscendingMinutes(
 
-    val message: String = "Duration can't be shorter than 15 minutes",
+    val message: String = "Minutes can't end before start",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 

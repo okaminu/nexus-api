@@ -7,9 +7,9 @@ import kotlin.reflect.KClass
 @Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Constraint(validatedBy = [])
-annotation class WeekSize(
+annotation class MinDuration(
 
-    val message: String = "Week must contain 7 days",
+    val message: String = "Duration can't be shorter than 15 minutes",
     val groups: Array<KClass<*>> = [],
     val payload: Array<KClass<out Payload>> = []
 
