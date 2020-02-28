@@ -10,7 +10,7 @@ import java.time.DayOfWeek.*
 class DayMinuteIntervalTest {
 
     @Nested
-    inner class ComparisonTests {
+    inner class Comparison {
 
         @Test
         fun `Returns 0 when same day minute intervals are compared`() {
@@ -45,7 +45,7 @@ class DayMinuteIntervalTest {
     }
 
     @Nested
-    inner class EqualityTests {
+    inner class Equality {
 
         @Test
         fun `Same day intervals are equal`() {
@@ -113,7 +113,7 @@ class DayMinuteIntervalTest {
     }
 
     @Nested
-    inner class HashCodeTests {
+    inner class HashCode {
 
         @Test
         fun `Equal day minute intervals have equal hash code`() {
