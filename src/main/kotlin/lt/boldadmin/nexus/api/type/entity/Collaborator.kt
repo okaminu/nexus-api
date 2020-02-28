@@ -16,7 +16,7 @@ class Collaborator(
 
     @field:SevenDayWeek
     @field:BoundedMinuteIntervals
-    @field:AscendingMinutes
+    @field:StartBeforeEndMinutes
     @field:MinDuration
     @field:GappedDays
     var workWeek: SortedSet<DayMinuteInterval> = sortedSetOf()
