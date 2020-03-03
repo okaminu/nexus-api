@@ -12,16 +12,16 @@ class DateIntervalTest {
 
     @Test
     fun `Can start before end date`() {
-        val dateRange = DateInterval(of(2019, Month.JANUARY, 12), of(2019, Month.JANUARY, 13))
+        val interval = DateInterval(of(2019, Month.JANUARY, 12), of(2019, Month.JANUARY, 13))
 
-        assertNotEquals(dateRange, null)
+        assertNotEquals(interval, null)
     }
 
     @Test
     fun `Can start and end on the same day`() {
-        val dateRange = DateInterval(of(2019, Month.JANUARY, 12), of(2019, Month.JANUARY, 12))
+        val interval = DateInterval(of(2019, Month.JANUARY, 12), of(2019, Month.JANUARY, 12))
 
-        assertNotEquals(dateRange, null)
+        assertNotEquals(interval, null)
     }
 
     @Test
