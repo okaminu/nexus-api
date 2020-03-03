@@ -49,7 +49,7 @@ class DayMinuteIntervalTest {
 
         @Test
         fun `Same day intervals are equal`() {
-            val tuesdayMorning = DayMinuteInterval(TUESDAY, MinuteInterval(9, 10), false)
+            val tuesdayMorning = DayMinuteInterval(TUESDAY, MinuteInterval(9, 10), true)
             val tuesdayNight = DayMinuteInterval(TUESDAY, MinuteInterval(0, 0), false)
 
             assertTrue(tuesdayMorning == tuesdayNight)
@@ -116,12 +116,21 @@ class DayMinuteIntervalTest {
     inner class HashCode {
 
         @Test
-        fun `Equal day minute intervals have equal hash code`() {
-            val first = DayMinuteInterval(TUESDAY, MinuteInterval(0, 0), false)
+        fun `Equal day intervals have equal hash code`() {
+            val first = DayMinuteInterval(TUESDAY, MinuteInterval(10, 20), true)
             val second = DayMinuteInterval(TUESDAY, MinuteInterval(0, 0), false)
 
             assertTrue(first == second)
             assertTrue(first.hashCode() == second.hashCode())
+        }
+
+        @Test
+        fun `Different day intervals have different hash code`() {
+            val monday = DayMinuteInterval(MONDAY, MinuteInterval(0, 0), false)
+            val tuesday = DayMinuteInterval(TUESDAY, MinuteInterval(0, 0), false)
+
+            assertFalse(monday == tuesday)
+            assertFalse(monday.hashCode() == tuesday.hashCode())
         }
 
         @Test
@@ -132,4 +141,5 @@ class DayMinuteIntervalTest {
             assertTrue(i.hashCode() == i.hashCode())
         }
     }
+
 }
