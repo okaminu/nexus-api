@@ -1,6 +1,5 @@
 package lt.boldadmin.nexus.api.type.entity
 
-import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
 import java.util.*
 import javax.validation.constraints.Size
 

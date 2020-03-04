@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.service
 
 import lt.boldadmin.nexus.api.type.entity.Project
-import lt.boldadmin.nexus.api.type.valueobject.Location
+import lt.boldadmin.nexus.api.type.valueobject.location.Location
 
 interface ProjectService {
     fun createWithDefaults(userId: String): Project

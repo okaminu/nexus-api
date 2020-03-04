@@ -1,6 +1,5 @@
 package lt.boldadmin.nexus.api.type.entity
 
-import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
 import lt.boldadmin.nexus.api.type.valueobject.WorkStatus
 
 data class Worklog(

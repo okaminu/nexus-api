@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.gateway
 
-import lt.boldadmin.nexus.api.type.valueobject.Coordinates
+import lt.boldadmin.nexus.api.type.valueobject.location.Coordinates
 
 interface ReverseGeocoder {
 
