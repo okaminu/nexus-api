@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.repository
 
 import lt.boldadmin.nexus.api.type.entity.Worklog
-import lt.boldadmin.nexus.api.type.valueobject.DateRange
+import lt.boldadmin.nexus.api.type.valueobject.time.DateInterval
 
 interface WorklogRepository {
 
@@ -11,9 +11,9 @@ interface WorklogRepository {
 
     fun findIntervalIdsByProjectId(projectId: String): Collection<String>
 
-    fun findIntervalIdsByCollaboratorId(collaboratorId: String, dateRange: DateRange): Collection<String>
+    fun findIntervalIdsByCollaboratorId(collaboratorId: String, interval: DateInterval): Collection<String>
 
-    fun findIntervalIdsByProjectId(projectId: String, dateRange: DateRange): Collection<String>
+    fun findIntervalIdsByProjectId(projectId: String, interval: DateInterval): Collection<String>
 
     fun findByIntervalIdOrderByLatest(intervalId: String): Collection<Worklog>
 

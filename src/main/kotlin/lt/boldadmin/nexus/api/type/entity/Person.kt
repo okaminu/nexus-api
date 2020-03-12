@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.type.entity
 
-import lt.boldadmin.nexus.api.type.valueobject.Address
+import lt.boldadmin.nexus.api.type.valueobject.location.Address
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Pattern
 import javax.validation.constraints.Size

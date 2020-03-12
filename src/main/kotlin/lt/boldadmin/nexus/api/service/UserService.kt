@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.service
 
 import lt.boldadmin.nexus.api.type.entity.User
-import lt.boldadmin.nexus.api.type.entity.collaborator.Collaborator
+import lt.boldadmin.nexus.api.type.entity.Collaborator
 
 interface UserService {
     fun save(user: User)

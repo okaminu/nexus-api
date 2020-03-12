@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.repository
 
-import lt.boldadmin.nexus.api.type.valueobject.CollaboratorCoordinates
+import lt.boldadmin.nexus.api.type.valueobject.location.CollaboratorCoordinates
 
 interface CollaboratorCoordinatesRepository {
     fun save(collaboratorCoordinates: CollaboratorCoordinates)

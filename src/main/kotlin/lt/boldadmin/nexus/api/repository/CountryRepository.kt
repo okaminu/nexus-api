@@ -1,6 +1,6 @@
 package lt.boldadmin.nexus.api.repository
 
-import lt.boldadmin.nexus.api.type.valueobject.Country
+import lt.boldadmin.nexus.api.type.valueobject.location.Country
 
 interface CountryRepository {
 
