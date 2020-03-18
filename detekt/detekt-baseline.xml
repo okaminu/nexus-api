@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Whitelist>
-    <ID>EmptyFunctionBlock:UniqueProjectNameValidator.kt$UniqueProjectNameValidator${}</ID>
     <ID>TooManyFunctions:UserRepository.kt$UserRepository</ID>
     <ID>TooManyFunctions:UserService.kt$UserService</ID>
     <ID>TooManyFunctions:WorklogRepository.kt$WorklogRepository</ID>
