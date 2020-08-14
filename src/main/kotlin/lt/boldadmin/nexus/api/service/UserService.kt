@@ -1,7 +1,7 @@
 package lt.boldadmin.nexus.api.service
 
-import lt.boldadmin.nexus.api.type.entity.User
 import lt.boldadmin.nexus.api.type.entity.Collaborator
+import lt.boldadmin.nexus.api.type.entity.User
 
 interface UserService {
     fun save(user: User)
@@ -12,6 +12,7 @@ interface UserService {
     fun existsByEmail(email: String): Boolean
     fun existsAny(): Boolean
     fun getByProjectId(projectId: String): User
+    fun getByCollaboratorId(collaboratorId: String): User
     fun getCollaborators(userId: String): Set<Collaborator>
     fun doesUserHaveProject(userId: String, projectId: String): Boolean
     fun doesUserHaveCollaborator(userId: String, collaboratorId: String): Boolean
